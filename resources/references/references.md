@@ -1,3 +1,8 @@
+# 目錄
+1. [文獻回顧(專題)](#文獻回顧專題)
+2. [材料與方法(專題)](#材料與方法專題)
+3. [碩推研究計畫](#碩推研究計畫)
+
 # 文獻回顧(專題)
 1. 在過去十年內，人工智慧的研究從長期被忽視的陰霾中走了出來，被人們看見了希望且掀起了新一波風潮(Cowls, 2021)
     ```
@@ -24,12 +29,7 @@
     Narayan, V., & Daniel, A. K. (2022). Energy Efficient Protocol for Lifetime Prediction of Wireless Sensor Network using Multivariate Polynomial Regression Model.
     ```
 
-6. 如圖2所示，Canamero et al.(2023)以MPR建立了一個六元多項式迴歸模型，結果顯示其訓練集的MAPE（Mean Absolute Percentage Error）為1.873%，MAE（Mean Absolute Error）為0.017，RMSE為0.024，R²為0.848；測試集的MAPE為1.503%，MAE為0.014，RMSE為0.017，R²為0.9072。![pic2](<../image/Canamero et al.(2023).png>)(2)
-    ```
-    Canamero, F. J., Doraisingam, A. R., & Alvarez-Leal, M. (2023). Mixing Performance Prediction of Detergent Mixing Process Based on the Discrete Element Method and Machine Learning. Applied Sciences, 13(10), 6094.
-    ```
-
-7. 如圖3所示，Zeini et al.(2023) 以MPR分析245個實驗資料，並使用5折交叉方法驗證MPR的準確性和泛化能力皆優於線性迴歸（LR）與隨機森林（RF）模型，該MPR模型在訓練集和測試集上的R²值分別為0.994和0.983，而RMSE為13.01和15.655。![pic3](<../image/Zeini et al.(2023).png>)(3)
+6. 如圖2所示，Canamero et al.(2023)以MPR建立了一個六元多項式迴歸模型，結果顯示其訓練集的MAPE（Mean Absolute Percentage Error）為1.873%，MAE（Mean Absolute
     ```
     Zeini, H. A., Lwti, N. K., Imran, H., Henedy, S. N., Bernardo, L. F. A., & Al-Khafaji, Z. (2023). Prediction of the Bearing Capacity of Composite Grounds Made of Geogrid-Reinforced Sand over Encased Stone Columns Floating in Soft Soil Using a White-Box Machine Learning Model. Applied Sciences, 13(8), 5131.
     ```
