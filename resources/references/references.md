@@ -139,3 +139,69 @@
     ```
     Abdul Hameed M Jawad, A., Bahram K, M., & Abass J, K. (2010). Evaluating raw and treated water quality of Tigris River within Baghdad by index analysis. journal of water resource and protection, 2010.
     ```
+
+# 碩推研究計畫
+1. 人工智慧的未來具有非常大的發展潛力[1]
+    ```
+    Dwivedi, Y. K., Hughes, L., Ismagilova, E., Aarts, G., Coombs, C., Crick, T., ... & Williams, M. D. (2021). Artificial Intelligence (AI): Multidisciplinary perspectives on emerging challenges, opportunities, and agenda for research, practice and policy. International Journal of Information Management, 57, 101994.
+    ```
+
+2. 近十年來，人工智慧從理論發展到實際應用，生成式 AI 等工具也被廣泛運用於日常問題的解決[2]
+    ```
+    Shao, Z., Zhao, R., Yuan, S., Ding, M., & Wang, Y. (2022). Tracing the evolution of AI in the past decade and forecasting the emerging trends. Expert Systems with Applications, 209, 118221.
+    ```
+
+3. 人工智慧未來將成為人類不可或缺的夥伴[3]
+    ```
+    Aggarwal, K., Mijwil, M. M., Al-Mistarehi, A. H., Alomari, S., Gök, M., Alaabdin, A. M. Z., & Abdulrhman, S. H. (2022). Has the future started? The current growth of artificial intelligence, machine learning, and deep learning. Iraqi Journal for Computer Science and Mathematics, 3(1), 115-123.
+    ```
+
+4. 遺失值（Missing Data）處理可以選擇直接刪除或進行填補兩種作法。如水值資料分析模型的訓練需要連續分佈的資料，實作上可選擇以填補的方式保持水質資料的完整性，方式包括使用常見值填補、平均值填補、模型預測填補、相似案例填補或使用特殊標記表示遺失值[4]
+    ```
+    Kotsiantis, S. B., Kanellopoulos, D., & Pintelas, P. E. (2006). Data preprocessing for supervised learning. International Journal of Computer Science, 1(2), 111-117.
+    ```
+
+5. 可以使用修剪法（Trimming）排除機器學習模型資料集中的極端值[5]
+    ```
+    Burlig, F., Knittel, C., Rapson, D., Reguant, M., & Wolfram, C. (2020). Machine learning from schools about energy efficiency. Journal of the Association of Environmental and Resource Economists, 7(6), 1181-1217.
+    ```
+    
+6. 正規化（Normalization）將數值資料縮放到[0, 1]的範圍，可能會導致異常值造成的資料遺失，因此使用標準化（Standardization）更佳。標準化將輸入參數的均值（μ=0）和方差（σ=1）進行調整，使資料更符合常態分佈[6]
+    ```
+    Sharma, P., & Singh, J. (2018, September). Machine learning based effort estimation using standardization. In 2018 International Conference on Computing, Power and Communication Technologies (GUCON) (pp. 716-720).  Greater Noida, NCR New Delhi, India.
+    ```
+
+7. 實作上能將整個資料集被分為訓練集和測試集，分别占整體80%和20%[7]
+    ```
+    Ajona, M., Vasanthi, P., & Vijayan, D. S. (2022). Application of multiple linear and polynomial regression in the sustainable biodegradation process of crude oil. Sustainable Energy Technologies and Assessments, 54, 102797.
+    ```
+
+8. 特徵工程（Feature Engineering）在機器學習過程中至關重要，能將資料轉換成模型可以理解的特徵，或將變數處理成特徵[8]
+    ```
+    Verdonck, T., Baesens, B., Óskarsdóttir, M., & vanden Broucke, S. (2024). Special issue on feature engineering editorial. Machine Learning, 113(7), 3917-3928.
+    ```
+
+9. MPR相較於傳統的線性迴歸（Linear Regression, LR）模型，在水質資料分析上表現更優越，且亦有研究指出MPR較支援向量機（Support Vector Machine, SVM）[9]
+    ```
+    Imran, H., Al-Abdaly, N. M., Shamsa, M. H., Shatnawi, A., Ibrahim, M., & Ostrowski, K. A. (2022). Development of prediction model to predict the compressive strength of eco-friendly concrete using multivariate polynomial regression combined with stepwise method. Materials, 15(1), 317.
+    ```
+
+10. 及隨機森林樹（Random Forest, RF）[10]更佳
+    ```
+    Zeini, H. A., Lwti, N. K., Imran, H., Henedy, S. N., Bernardo, L. F. A., & Al-Khafaji, Z. (2023). Prediction of the Bearing Capacity of Composite Grounds Made of Geogrid-Reinforced Sand over Encased Stone Columns Floating in Soft Soil Using a White-Box Machine Learning Model. Applied Sciences, 13(8), 5131.
+    ```
+
+11. XGBoost在資料科學領域中被廣泛使用，也在Kaggle許多機器學習及競賽中取得最佳結果，其特點為有非常強的擴展性（Scalibility）與性能，可以使用相對其他模型更少的系統資源，擴充數十億級別的資料[11]
+    ```
+    Chen, T., & Guestrin, C. (2016, August). XGBoost: A scalable tree boosting system. In Proceedings of the 22nd ACM SIGKDD International Conference on Knowledge Discovery and Data Mining (pp. 785-794). New York, NY, United States.
+    ```
+
+12. LightGBM是一種高效能的梯度提升決策樹，在傳統Gradient Boosting Decision Tree（GBDT）演算法上加入使用Gradient-based One-Side Sampling（GOSS）和 Exclusive Feature Bunding （EFB），並顯示出LightGBM相較傳統的GBDT加快了20倍以上的速度，同時也並未降低準確性[12]
+    ```
+    Ke, G., Meng, Q., Finley, T., Wang, T., Chen, W., Ma, W., ... & Liu, T. Y. (2017). LightGBM: A highly efficient gradient boosting decision tree. Advances in Neural Information Processing Systems, 30.
+    ```
+
+13. 交叉驗證（Cross Validation）能夠用於超參數（Hyperparameter）調整，能夠防止過擬合的發生，並進行模型泛化的評估[13]
+    ```
+    Berrar, D. (2019) Cross-Validation. In: Ranganathan, S., Gribskov, M., Nakai, K. and Christian Schönbach, C., Eds., Reference Module in Life Sciences Encyclopedia of Bioinformatics and Computational Biology, Vol. 1, Elsevier, Amsterdam, 542-545.
+    ```
