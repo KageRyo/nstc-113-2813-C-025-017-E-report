@@ -1,0 +1,54 @@
+% 環境設定
+% !TEX program = xelatex
+% !TEX encoding = UTF-8
+% !BIB program = biber
+\documentclass[12pt,a4paper]{article}
+
+% 字體套件
+\usepackage{fontspec}
+\usepackage[BoldFont]{xeCJK}
+% 字體設定
+\setCJKmainfont{DFKai-SB}     % 標楷體
+\setmainfont{Times New Roman}
+% 中文自動換行
+\XeTeXlinebreaklocale "zh"             
+\XeTeXlinebreakskip = 0pt plus 1pt     
+
+% 紙張格式
+\usepackage{geometry}
+\geometry{
+ a4paper,
+ left=12.7mm,       % 左邊界
+ right=12.7mm,      % 右邊界
+ top=12.7mm,        % 上邊界
+ bottom=12.7mm,     % 下邊界
+}
+
+% 套件
+\usepackage{amssymb}
+\usepackage{mathtools}
+\usepackage{microtype}
+\usepackage{enumitem}
+\usepackage{dirtytalk}
+\usepackage[figurename=圖]{caption}
+\usepackage{subcaption}
+\usepackage{fancyhdr}
+\usepackage{graphicx}
+\usepackage{hyperref}
+
+% 設定
+\renewcommand{\tablename}{表} % 改變表的名稱
+\pagestyle{fancy}
+\fancyhead{} % 清除所有頁首設定
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+\setlength{\headwidth}{\textwidth}
+
+\lfoot{表 CM03}
+\rfoot{共~~\pageref{LastPage}~~頁~~第{~~\thepage~~}頁}
+
+\begin{document}
+
+
+\end{document}
