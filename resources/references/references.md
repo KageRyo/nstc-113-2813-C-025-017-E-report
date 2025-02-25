@@ -191,12 +191,12 @@
     Zeini, H. A., Lwti, N. K., Imran, H., Henedy, S. N., Bernardo, L. F. A., & Al-Khafaji, Z. (2023). Prediction of the Bearing Capacity of Composite Grounds Made of Geogrid-Reinforced Sand over Encased Stone Columns Floating in Soft Soil Using a White-Box Machine Learning Model. Applied Sciences, 13(8), 5131.
     ```
 
-11. XGBoost在資料科學領域中被廣泛使用，也在Kaggle許多機器學習及競賽中取得最佳結果，其特點為有非常強的擴展性（Scalibility）與性能，可以使用相對其他模型更少的系統資源，擴充數十億級別的資料[11]
+11. USEDXGBoost在資料科學領域中被廣泛使用，也在Kaggle許多機器學習及競賽中取得最佳結果，其特點為有非常強的擴展性（Scalibility）與性能，可以使用相對其他模型更少的系統資源，擴充數十億級別的資料[11]
     ```
     Chen, T., & Guestrin, C. (2016, August). XGBoost: A scalable tree boosting system. In Proceedings of the 22nd ACM SIGKDD International Conference on Knowledge Discovery and Data Mining (pp. 785-794). New York, NY, United States.
     ```
 
-12. LightGBM是一種高效能的梯度提升決策樹，在傳統Gradient Boosting Decision Tree（GBDT）演算法上加入使用Gradient-based One-Side Sampling（GOSS）和 Exclusive Feature Bunding （EFB），並顯示出LightGBM相較傳統的GBDT加快了20倍以上的速度，同時也並未降低準確性[12]
+12. USEDLightGBM是一種高效能的梯度提升決策樹，在傳統Gradient Boosting Decision Tree（GBDT）演算法上加入使用Gradient-based One-Side Sampling（GOSS）和 Exclusive Feature Bunding （EFB），並顯示出LightGBM相較傳統的GBDT加快了20倍以上的速度，同時也並未降低準確性[12]
     ```
     Ke, G., Meng, Q., Finley, T., Wang, T., Chen, W., Ma, W., ... & Liu, T. Y. (2017). LightGBM: A highly efficient gradient boosting decision tree. Advances in Neural Information Processing Systems, 30.
     ```
