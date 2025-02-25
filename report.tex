@@ -35,6 +35,7 @@
 \usepackage{fancyhdr}
 \usepackage{graphicx}
 \usepackage{hyperref}
+\usepackage{lastpage}
 
 % 設定
 \renewcommand{\tablename}{表} % 改變表的名稱
@@ -77,7 +78,10 @@
 \item 國內外研究情況\\
 　　本研究作者先前參與的計畫已經使用物聯網技術進行水質資料的採集，這種方法在環境監測中已經相當普遍。然而，目前國內外針對水質資料分析的智慧化系統，特別是結合機器學習技術的水質分析系統相對較少。機器學習技術在水質評估中的應用已被證明是有效的，並逐漸成為水資源管理的重要分析工具(Zhou et al., 2023)，而Im et al.(2022)應用了各種技術構建學習模型，可以提供即時準確水質資訊，並通過早期診斷水質異常以改善公共健康。因此，本研究具有創新性和獨特性，有助於填補水質資料分析中高效方法的空白。
 \item 重要參考文獻\\
-　　
+    % 將文獻標號從 APA 格式改為方括號格式，例如 [1]、[2] 等，更符合理工相關研究 %
+　　隨著人工智慧發展，各種機器學習模型也如雨後春筍般出現，本研究參考Im et al.(2022)應用了各種技術構建學習模型，目的提供即時準確水質資訊，期望得以透過早期診斷水質異常以改善公共健康。模型實作上如Imran et al.(2022)開發一種基於多元多項式迴歸（MPR）的機器學習模型，在該研究中以模型與線性迴歸及支援向量機模型進行比較，發現MPR在性能評估指標包含R²（R-squared）和RMSE（Root-Mean-Square Error）上皆優於另外兩個模型。加上其他研究成果如Narayan \& Daniel.(2022)使用MPR模型驗證其預測結果，且Canamero et al.(2023)以MPR建立了一個六元多項式迴歸模型，結果顯示其訓練集的MAPE（Mean Absolute Percentage Error）為1.873\%，MAE（Mean Absolute Error）為（TODO待確認），證明了MPR模型在水質資料分析上的優越性。這些研究成果將有助於本研究的模型選擇與效能評估，也因此本研究前期採用MPR模型作為基準模型進行比較。\\
+　　另外，隨著近年來XGBoost與LightGBM等新興模型在機器學習領域中的崛起，本研究在中後期將其納入比較範疇，XGBoost在資料科學領域中被廣泛使用，也在Kaggle許多機器學習及競賽中取得最佳結果，其特點為有非常強的擴展性（Scalibility）與性能，可以使用相對其他模型更少的系統資源，擴充數十億級別的資料。而LightGBM是一種高效能的梯度提升決策樹，在傳統Gradient Boosting Decision Tree（GBDT）演算法上加入使用Gradient-based One-Side Sampling（GOSS）和 Exclusive Feature Bunding （EFB），並顯示出LightGBM相較傳統的GBDT加快了20倍以上的速度，同時也並未降低準確性。\\
+　　綜合以上重要參考文獻，本研究對XGBoost、LightGBM、支援向量機（Support Vector Machine, SVM）、隨機森林（Random Forest, RF）、多元多項式迴歸（Multiple Polynomial Regression, MPR）以及線性迴歸（Linear Regression, LR）等多種模型進行比較與評估，期望找出最適合水質分析的機器學習模型，並提升水質分析的準確性與效率。
 \end{enumerate}
 
 \item[(二)] 研究方法、進行步驟及執行進度。請分年列述：1. 本計畫採用之研究方法與原因及其創新性。2. 預計可能遭遇之困難及解決途徑。3. 重要儀器之配合使用情形。4. 如為須赴國外或大陸地區研究，請詳述其必要性以及預期效益等。
