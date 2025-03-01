@@ -87,6 +87,14 @@
 \item[(二)] 研究方法、進行步驟及執行進度。
 \begin{enumerate}[label=\arabic*.]
 \item 研究方法\\
+　　本研究開發之智慧化水質分析與評估系統採用前後端分離架構，透過應用程式介面（Application Programming Interface, API）進行資料傳遞與呼叫。後端（Back-end）水質資料分析模型以Python程式語言開發，運用NumPy、Pandas及Scikit-learn等工具進行水質資料的處理和分析。前端（Front-end）則以JavaScript語言的React Native框架開發行動裝置應用程式，實現跨系統平臺操作。此架構的水質資料分析模型開發可歸納為四個步驟：匯入資料、資料處理、特徵工程及模型訓練與評估。系統建置完成後，使用者在前端行動裝置應用程式中只需輸入欲分析的水質資料，即可經由已訓練完成的機器學習模型進行分析，再於使用者介面（UI）將產生一份分析報表，包括水質狀況的綜合評分以及狀態說明。\\
+　　在模型開發過程中，我們認為機器學習技術不僅適用於水質資料分析，也能拓展到其他相關領域。除了前期使用的MPR模型外，我們還加入XGBoost和LightGBM等新興優秀模型進行比較，以尋找最適合解決問題的方案。同時，利用交叉驗證（Cross Validation）調整超參數（Hyperparameter），有效防範過擬合並評估模型的泛化能力\cite{ref11}。研究工具方面涵蓋了機器學習程式語言(2-1-1)、開發環境(2-1-2)、功能函式庫(2-1-3)及前端開發工具(2-1-4)，用以構建一套完整的水質資料分析與評估系統，並確保能挑選出最佳模型。各項工具分述如下：
+    \begin{enumerate}[label=2-1-\arabic*.]
+        \item 機器學習語言
+        \item 機器學習環境
+        \item 功能函式庫
+        \item 前端開發工具
+    \end{enumerate}
 \item 研究步驟\\
 \item 執行進度\\
 \item 預計可能遭遇之困難與解決途徑\\
@@ -112,6 +120,7 @@
 \bibitem{ref8} Zeini, H. A., Lwti, N. K., Imran, H., Henedy, S. N., Bernardo, L. F. A., \& Al-Khafaji, Z. (2023). Prediction of the Bearing Capacity of Composite Grounds Made of Geogrid-Reinforced Sand over Encased Stone Columns Floating in Soft Soil Using a White-Box Machine Learning Model. Applied Sciences, 13(8), 5131.
 \bibitem{ref9} Chen, T., \& Guestrin, C. (2016, August). XGBoost: A scalable tree boosting system. In Proceedings of the 22nd ACM SIGKDD International Conference on Knowledge Discovery and Data Mining (pp. 785-794). New York, NY, United States.
 \bibitem{ref10} Ke, G., Meng, Q., Finley, T., Wang, T., Chen, W., Ma, W., ... \& Liu, T. Y. (2017). LightGBM: A highly efficient gradient boosting decision tree. Advances in Neural Information Processing Systems, 30.
+\bibitem{ref11} Berrar, D. (2019) Cross-Validation. In: Ranganathan, S., Gribskov, M., Nakai, K. and Christian Schönbach, C., Eds., Reference Module in Life Sciences Encyclopedia of Bioinformatics and Computational Biology, Vol. 1, Elsevier, Amsterdam, 542-545.
 \end{thebibliography}
 
 \end{enumerate}	
