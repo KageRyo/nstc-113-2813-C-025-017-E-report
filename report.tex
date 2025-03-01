@@ -106,13 +106,14 @@
                 \item 資料處理工具\\
                 　　本研究以NumPy及Pandas作為資料處理工具，NumPy是Python程式語言中支援科學和數值計算的函式庫，也相容於Pandas、Matplotlib和Scikit-learn等工具\cite{ref14}。NumPy作為資料處理的主要工具是因為它提供了科學計算所需的基本資料結構\cite{ref15}。同時NumPy也提供豐富的數學運算、資料讀寫、線性代數、傅立葉變換和隨機數生成等功能函式\cite{ref16}。使用NumPy得以更有效率地處理原始資料，進一步提升程式的開發效率。而Pandas建立於NumPy的基礎之上，是一種用於格式化資料分析的開源Python函式庫，它能夠處理類似電子試算表格式的輸入資料，可以快速地進行資料載入、操作、對齊和合併等功能\cite{ref17}。
                 \item 機器學習框架\\
-                　　本研究採用了Scikit-learn作為機器學習框架，以建構研究所需的各種機器學習模型模型\ref{18}。支援Python程式的機器學習框架之中，Scikit-learn提供多樣的演算法，其特色包括具有良好的應用程式介面（Application Programming Interface, API）、詳細文檔說明及技術支援\cite{ref19}。由於Scikit-learn具有輕量而高效的特性，可使本研究實作能夠有效率地達到智慧化水質資料分析的應用需求。
+                　　本研究採用了Scikit-learn作為機器學習框架，以建構研究所需的各種機器學習模型模型\cite{ref18}。支援Python程式的機器學習框架之中，Scikit-learn提供多樣的演算法，其特色包括具有良好的應用程式介面（Application Programming Interface, API）、詳細文檔說明及技術支援\cite{ref19}。由於Scikit-learn具有輕量而高效的特性，可使本研究實作能夠有效率地達到智慧化水質資料分析的應用需求。
                 \item 圖表繪製工具\\
-                
+                　　Matplotlib是一個多功能的Python繪圖函式庫，具有產生各種類型和格式圖表的功能，包括折線圖、散布圖、熱圖、直方圖、圓餅圖和立體圖形，同時也支援動畫和互動顯示\cite{ref20}。運用Matplotlib能夠以視覺化方式呈現多元多項式迴歸運算後的水質資料分析結果，使模型訓練結果呈現更生動以提升可讀性。
                 \item 應用程式介面\\
-                
+                　　本研究以FastAPI作為應用程式界面（API）框架，FastAPI是一個新興但可靠的API框架\cite{ref21}，能夠快速且有效地於Python建立RESTful API伺服器。機器學習模型與使用FastAPI服務的前端整合，能夠相較使用如Flask等其他API框架的效能提高了45\%\cite{ref22}。使用FastAPI建立API，有助於前後端之間的通訊與資料傳遞，實現智慧化水質分析與評估系統的系統化架構。
             \end{enumerate}
         \item 前端開發工具\\
+        　　在進行前端應用程式開發的過程中，本研究採用React Native框架。此框架由Meta公司基於React框架與JavaScript語言設計開發，重點在於能夠開發跨操作系統運行的行動裝置應用程式，作業系統支援包括Android及iOS\cite{ref23}。使用React Native不僅能夠直接進行跨系統平臺開發，還能顯著提升行動裝置應用程式開發的速度。使得本研究在開發具機器學習功能之智慧化水質分析與評估系統時，前端開發的效率明顯優於單獨針對Android或iOS進行開發的方法。
     \end{enumerate}
 \item 研究步驟\\
 \item 執行進度\\
@@ -148,6 +149,10 @@
 \bibitem{ref17} Chen, D. Y. (2017). Pandas for everyone: Python data analysis. Addison-Wesley Professional.
 \bibitem{ref18} Aurélien Géron. (2022). Hands-On Machine Learning with Scikit-Learn, Keras, and TensorFlow, 3rd Edition. O’Reilly Media, Inc.
 \bibitem{ref19} Pedregosa, F., Varoquaux, G., Gramfort, A., Michel, V., Thirion, B., Grisel, O., ... \& Duchesnay, E. (2011). Scikit-learn: Machine Learn-ing in Python, Journal of Machine Learning Re-search, 12.
+\bibitem{ref20} Hunt, J. (2023). Introduction to Matplotlib. In Advanced Guide to Python 3 Programming, Cham: Springer International Publishing, 121-128.
+\bibitem{ref21} Bill Lubanovic. (2024). FastAPI. O’Reilly Media.
+\bibitem{ref22} Bansal, P., \& Ouda, A. (2022, July). Study on integration of fastapi and machine learning for continuous authentication of behavioral biometrics. In 2022 International Symposium on Networks, Computers and Communications (ISNCC) (pp. 1-6). IEEE.
+\bibitem{ref23} Native, R. (2020). React native. línea]. Disponible en: https://reactnative. dev/.[Último acceso: 2 de noviembre 2019].
 \end{thebibliography}
 
 \end{enumerate}	
