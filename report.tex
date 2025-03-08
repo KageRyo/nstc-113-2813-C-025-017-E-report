@@ -18,10 +18,10 @@
 \usepackage{geometry}
 \geometry{
  a4paper,
- left=12.7mm,       % 左邊界
- right=12.7mm,      % 右邊界
- top=12.7mm,        % 上邊界
- bottom=12.7mm,     % 下邊界
+ left=12.7mm,
+ right=12.7mm,
+ top=12.7mm,
+ bottom=12.7mm,
 }
 
 % 套件
@@ -36,12 +36,12 @@
 \usepackage{graphicx}
 \usepackage{hyperref}
 \usepackage{lastpage}
-\usepackage{cite} % 新增這行
+\usepackage{cite}
 
 % 設定
-\renewcommand{\tablename}{表} % 改變表的名稱
+\renewcommand{\tablename}{表}
 \pagestyle{fancy}
-\fancyhead{} % 清除所有頁首設定
+\fancyhead{}
 \fancyfoot{}
 \renewcommand{\headrulewidth}{0pt}
 \renewcommand{\footrulewidth}{0pt}
@@ -60,9 +60,9 @@
 \item 研究計畫之背景\\
 　　本研究旨在開發並實現具機器學習（Machine Learning, ML）功能的智慧化水質分析與評估系統，以解決目前水質資料分析缺乏高效率方法的問題。研究作者曾擔任科技部計畫兼任研究助理，協助執行「運用智慧型綠能永續景觀噴泉促進環境保育效益之研究」（計畫編號：MOST 110-2410-H025-024），該計畫運用物聯網（Internet of Things, IoT）技術蒐集南投麒麟潭的水質資料。藉由該計畫經驗發現自動化運行的結果相較於人工記錄更有效率，但後續資料分析仍需耗費大量工作時間。
 \item 研究問題\\
-　　在水質資料分析方面，除了使用Microsoft Excel直接計算外，通常會使用如Statistics Analysis System（SAS）或Statistical Product and Service Solutions（SPSS）等統計專有軟體（Proprietary Software）。然而，這些軟體為專有（Proprietary）且非開源，不僅需要額外購買授權，還需投入時間學習才能熟練使用。由於其操作高度依賴使用者的專業知識，分析結果可能因個人經驗而有所差異。由於這些軟體無法修改與物聯網設備直接進行資料串聯傳輸，造成未來計畫整合實現自動化資料收集與資料分析的障礙。
+　　在水質資料分析方面，除了使用Microsoft Excel直接計算外，通常會使用如Statistical Analysis System（SAS）或Statistical Product and Service Solutions（SPSS）等統計專有軟體（Proprietary Software）。然而，這些軟體為專有（Proprietary）且非開源，不僅需要額外購買授權，還需投入時間學習才能熟練使用。由於其操作高度依賴使用者的專業知識，分析結果可能因個人經驗而有所差異。由於這些軟體無法修改與物聯網設備直接進行資料串聯傳輸，造成未來計畫整合實現自動化資料收集與資料分析的障礙。
 \item 研究原創性\\
-　　近十年來，人工智慧（Artifical Intellgience, AI）從理論發展到實際應用，各種AI等工具也被廣泛運用於日常問題成為解決方案\cite{ref1}。本研究運用人工智慧中的機器學習技術，開發一套智慧化水質分析與評估系統，實現更高效且易於操作的創新水質分析方法。不同於傳統統計軟體需要人工輸入與分析，本系統將結合自動化資料處理與機器學習演算法，以提升水質分析的準確性與效率。此外，本研究將探索AI在水資源管理與環境保育領域的創新應用，提供創新的智慧化水質資料分析方案。\\  
+　　近十年來，人工智慧（Artificial Intelligence, AI）從理論發展到實際應用，各種AI等工具也被廣泛運用於日常問題成為解決方案\cite{ref1}。本研究運用人工智慧中的機器學習技術，開發一套智慧化水質分析與評估系統，實現更高效且易於操作的創新水質分析方法。不同於傳統統計軟體需要人工輸入與分析，本系統將結合自動化資料處理與機器學習演算法，以提升水質分析的準確性與效率。此外，本研究將探索AI在水資源管理與環境保育領域的創新應用，提供創新的智慧化水質資料分析方案。\\  
 　　為了找出最適合水質分析的機器學習模型，本研究針對XGBoost、LightGBM、支援向量機（Support Vector Machine, SVM）、隨機森林（Random Forest, RF）、多元多項式迴歸（Multiple Polynomial Regression, MPR）以及線性迴歸（Linear Regression, LR）等多種模型進行比較與評估。透過實驗分析與比較不同模型在水質資料分析準確度、計算效能與資料適應性的表現，進一步應用於改良水質分析，使系統能夠有效應對水體環境的分析與評估需求。\\
 　　實驗設計包括使用先前於「運用智慧型綠能永續景觀噴泉促進環境保育效益之研究」計畫中，使用物聯網設備實際蒐集的水質資料，加上環境部環境資料開放平臺公開資料使用，特徵選擇包括溶解氧（DO）、生化需氧量（BOD）、氨氮（NH3-N）、電導度（EC）和懸浮固體（SS）等關鍵指標。在訓練過程中，使用水體品質指標（Water Quality Index, WQI$_5$）作為標記資料進行監督式學習。
 \item 研究重要性\\
@@ -87,18 +87,54 @@
 \item[(二)] 研究方法、進行步驟及執行進度。
 \begin{enumerate}[label=\arabic*.]
 \item 研究方法\\
+　　本研究開發之智慧化水質分析與評估系統採用前後端分離架構，透過應用程式介面（Application Programming Interface, API）進行資料傳遞與呼叫。後端（Back-end）水質資料分析模型以Python程式語言開發，運用NumPy、Pandas及Scikit-learn等工具進行水質資料的處理和分析。前端（Front-end）則以JavaScript語言的React Native框架開發行動裝置應用程式，實現跨系統平臺操作。此架構的水質資料分析模型開發可歸納為四個步驟：匯入資料、資料處理、特徵工程及模型訓練與評估。系統建置完成後，使用者在前端行動裝置應用程式中只需輸入欲分析的水質資料，即可經由已訓練完成的機器學習模型進行分析，再於使用者介面（UI）將產生一份分析報表，包括水質狀況的綜合評分以及狀態說明。\\
+　　在模型開發過程中，我們認為機器學習技術不僅適用於水質資料分析，也能拓展到其他相關領域。除了前期使用的MPR模型外，我們還加入XGBoost和LightGBM等新興優秀模型進行比較，以尋找最適合解決問題的方案。同時，利用交叉驗證（Cross Validation）調整超參數（Hyperparameter），有效防範過擬合並評估模型的泛化能力\cite{ref11}。研究工具方面涵蓋了機器學習程式語言(2-1-1)、開發環境(2-1-2)、功能函式庫(2-1-3)及前端開發工具(2-1-4)，用以構建一套完整的水質資料分析與評估系統，並確保能挑選出最佳模型。各項工具分述如下：
+    \begin{enumerate}[label=2-1-\arabic*.]
+        \item 機器學習語言\\
+        　　近年來Python在人工智慧領域中具有顯著影響力，因其優秀的資料處理與分析能力，支援各式開源函式庫使得Python成為資料分析的熱門選擇\cite{ref12}，且能夠有效處理即時、大型和非結構化資料\cite{ref13}，對於本研究進行各式水質資料分析的研究具有明顯的優勢。
+        \item 機器學習環境\\
+        　　本研究機器學習環境主要分為(A)雲端運算平臺及(B)開發環境。正如所言「工欲善其事，必先利其器」，為了能夠有效率地進行整體系統的各項開發，並在完成後部署於雲端運算平臺。 
+                    \begin{enumerate}[label=\Alph*.]
+                        \item 雲端運算平臺\\
+                        　　本研究運用機器學習框架－Scikit-learn進行功能開發，Scikit-learn著重高效能的運算資源利用，符合智慧化水質資料分析的應用需求。此外，亦將建置雲端平臺－開發與部署所建置之MPR模型於Google Cloud Platform（GCP），GCP為一種基礎結構即服務（IaaS）平臺，提供於雲端部署機器模型之能力。 
+                        \item 開發環境\\
+                        　　本研究採用Visual Studio Code作為整合開發環境（Integrated Development Environment, IDE），並透過Docker實現容器化開發。可以直接將所開發之機器學習模型與應用程式部署至雲端平臺，運用分散式架構使得本研究具備處理和運算大量水質資料的能力。
+                    \end{enumerate}
+        \item 功能函式庫\\
+        　　程式開發所需之功能函式庫分為：(A)資料處理工具、(B)機器學習框架、(C)圖表繪製工具及(D)應用程式介面。實作上以模組化方式結合各項工具能有助於完成水質分析模型的建構，相關說明如下：
+            \begin{enumerate}[label=\Alph*.]
+                \item 資料處理工具\\
+                　　本研究以NumPy及Pandas作為資料處理工具，NumPy是Python程式語言中支援科學和數值計算的函式庫，也相容於Pandas、Matplotlib和Scikit-learn等工具\cite{ref14}。NumPy作為資料處理的主要工具是因為它提供了科學計算所需的基本資料結構\cite{ref15}。同時NumPy也提供豐富的數學運算、資料讀寫、線性代數、傅立葉變換和隨機數生成等功能函式\cite{ref16}。使用NumPy得以更有效率地處理原始資料，進一步提升程式的開發效率。而Pandas建立於NumPy的基礎之上，是一種用於格式化資料分析的開源Python函式庫，它能夠處理類似電子試算表格式的輸入資料，可以快速地進行資料載入、操作、對齊和合併等功能\cite{ref17}。
+                \item 機器學習框架\\
+                　　本研究採用了Scikit-learn作為機器學習框架，以建構研究所需的各種機器學習模型模型\cite{ref18}。支援Python程式的機器學習框架之中，Scikit-learn提供多樣的演算法，其特色包括具有良好的應用程式介面（Application Programming Interface, API）、詳細文檔說明及技術支援\cite{ref19}。由於Scikit-learn具有輕量而高效的特性，可使本研究實作能夠有效率地達到智慧化水質資料分析的應用需求。
+                \item 圖表繪製工具\\
+                　　Matplotlib是一個多功能的Python繪圖函式庫，具有產生各種類型和格式圖表的功能，包括折線圖、散布圖、熱圖、直方圖、圓餅圖和立體圖形，同時也支援動畫和互動顯示\cite{ref20}。運用Matplotlib能夠以視覺化方式呈現多元多項式迴歸運算後的水質資料分析結果，使模型訓練結果呈現更生動以提升可讀性。
+                \item 應用程式介面\\
+                　　本研究以FastAPI作為應用程式界面（API）框架，FastAPI是一個新興但可靠的API框架\cite{ref21}，能夠快速且有效地於Python建立RESTful API伺服器。機器學習模型與使用FastAPI服務的前端整合，能夠相較使用如Flask等其他API框架的效能提高了45\%\cite{ref22}。使用FastAPI建立API，有助於前後端之間的通訊與資料傳遞，實現智慧化水質分析與評估系統的系統化架構。
+            \end{enumerate}
+        \item 前端開發工具\\
+        　　在進行前端應用程式開發的過程中，本研究採用React Native框架。此框架由Meta公司基於React框架與JavaScript語言設計開發，重點在於能夠開發跨操作系統運行的行動裝置應用程式，作業系統支援包括Android及iOS\cite{ref23}。使用React Native不僅能夠直接進行跨系統平臺開發，還能顯著提升行動裝置應用程式開發的速度。使得本研究在開發具機器學習功能之智慧化水質分析與評估系統時，前端開發的效率明顯優於單獨針對Android或iOS進行開發的方法。
+    \end{enumerate}
 \item 研究步驟\\
+　　[內容]
 \item 執行進度\\
+　　[內容]
 \item 預計可能遭遇之困難與解決途徑\\
+　　[內容]
 \item 重要儀器之配合使用情形\\
+　　[內容]
 \end{enumerate}
 
-\item[(三)] 預期完成之工作項目及成果。
+\item[(三)] 預期完成之工作項目及成果。 % TODO: 先完成這部分 %
 \begin{enumerate}[label=\arabic*.]
 \item 預期完成之工作項目\\
+　　[內容]
 \item 對於參與之工作人員，預期可獲之訓練\\
+　　[內容]
 \item 預期完成之研究成果\\
+　　[內容]
 \item 學術研究、國家發展及其他應用方面預期之貢獻\\
+　　[內容]
 \end{enumerate}
 
 \begin{thebibliography}{99}
@@ -112,6 +148,19 @@
 \bibitem{ref8} Zeini, H. A., Lwti, N. K., Imran, H., Henedy, S. N., Bernardo, L. F. A., \& Al-Khafaji, Z. (2023). Prediction of the Bearing Capacity of Composite Grounds Made of Geogrid-Reinforced Sand over Encased Stone Columns Floating in Soft Soil Using a White-Box Machine Learning Model. Applied Sciences, 13(8), 5131.
 \bibitem{ref9} Chen, T., \& Guestrin, C. (2016, August). XGBoost: A scalable tree boosting system. In Proceedings of the 22nd ACM SIGKDD International Conference on Knowledge Discovery and Data Mining (pp. 785-794). New York, NY, United States.
 \bibitem{ref10} Ke, G., Meng, Q., Finley, T., Wang, T., Chen, W., Ma, W., ... \& Liu, T. Y. (2017). LightGBM: A highly efficient gradient boosting decision tree. Advances in Neural Information Processing Systems, 30.
+\bibitem{ref11} Berrar, D. (2019) Cross-Validation. In: Ranganathan, S., Gribskov, M., Nakai, K. and Christian Schönbach, C., Eds., Reference Module in Life Sciences Encyclopedia of Bioinformatics and Computational Biology, Vol. 1, Elsevier, Amsterdam, 542-545.
+\bibitem{ref12} McKinney W. (2022). Python for Data Analysis: Vol. Third edition. O’Reilly Media.
+\bibitem{ref13} Harnowo, A. (2022). Blending a MOOC course into a Business School’s Course to Introduce Python for Data Analytics. Business Education Innovation Journal, 14(2), 31–35.
+\bibitem{ref14} Harris, C. R., Millman, K. J., Van Der Walt, S. J., Gommers, R., Virtanen, P., Cournapeau, D., ... \& Oliphant, T. E. (2020). Array programming with NumPy. Nature, 585(7825), 357-362.
+\bibitem{ref15} Nishino, R. O. Y. U. D., \& Loomis, S. H. C. (2017). Cupy: A numpy-compatible library for nvidia gpu calculations. 31st confernce on neural information processing systems, 151(7).
+\bibitem{ref16} McKinney, W. (2012). Python for data analysis: Data wrangling with Pandas, NumPy, and IPython. " O'Reilly Media, Inc.".
+\bibitem{ref17} Chen, D. Y. (2017). Pandas for everyone: Python data analysis. Addison-Wesley Professional.
+\bibitem{ref18} Aurélien Géron. (2022). Hands-On Machine Learning with Scikit-Learn, Keras, and TensorFlow, 3rd Edition. O’Reilly Media, Inc.
+\bibitem{ref19} Pedregosa, F., Varoquaux, G., Gramfort, A., Michel, V., Thirion, B., Grisel, O., ... \& Duchesnay, E. (2011). Scikit-learn: Machine Learn-ing in Python, Journal of Machine Learning Re-search, 12.
+\bibitem{ref20} Hunt, J. (2023). Introduction to Matplotlib. In Advanced Guide to Python 3 Programming, Cham: Springer International Publishing, 121-128.
+\bibitem{ref21} Bill Lubanovic. (2024). FastAPI. O’Reilly Media.
+\bibitem{ref22} Bansal, P., \& Ouda, A. (2022, July). Study on integration of fastapi and machine learning for continuous authentication of behavioral biometrics. In 2022 International Symposium on Networks, Computers and Communications (ISNCC) (pp. 1-6). IEEE.
+\bibitem{ref23} Native, R. (2020). React native. línea]. Disponible en: https://reactnative. dev/.[Último acceso: 2 de noviembre 2019].
 \end{thebibliography}
 
 \end{enumerate}	
