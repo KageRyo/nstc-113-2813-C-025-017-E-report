@@ -4,32 +4,32 @@
 3. [碩推研究計畫](#碩推研究計畫)
 
 # 文獻回顧(專題)
-1. USED在過去十年內，人工智慧的研究從長期被忽視的陰霾中走了出來，被人們看見了希望且掀起了新一波風潮(Cowls, 2021)
+1. 在過去十年內，人工智慧的研究從長期被忽視的陰霾中走了出來，被人們看見了希望且掀起了新一波風潮(Cowls, 2021)
     ```
     Cowls, J. (2021). ‘AI for Social Good’: Whose Good and Who’s Good? Introduction to the Special Issue on Artificial Intelligence for Social Good. Philosophy & Technology, 34(Suppl 1), 1–5. 
     ```
 
-2. USED在其各項發展中，機器學習在水質評估上已被證明是有效的，並成為了水資源管理的一種分析策略(Zhou et al., 2023)。
+2. 在其各項發展中，機器學習在水質評估上已被證明是有效的，並成為了水資源管理的一種分析策略(Zhou et al., 2023)。
     ```
     Zhou, Y., Wang, X., Li, W., Zhou, S., & Jiang, L. (2023). Water Quality Evaluation and Pollution Source Apportionment of Surface Water in a Major City in Southeast China Using Multi-Statistical Analyses and Machine Learning Models. International Journal of Environmental Research and Public Health, 20(1). 
     ```
 
-3. USEDIm et al.(2022)應用了各種技術構建學習模型，可以提供即時準確水質資訊，並通過早期診斷水質異常以改善公共健康。
+3. Im et al.(2022)應用了各種技術構建學習模型，可以提供即時準確水質資訊，並通過早期診斷水質異常以改善公共健康。
     ```
     Im, Y., Song, G., Lee, J., & Cho, M. (2022). Deep Learning Methods for Predicting Tap-Water Quality Time Series in South Korea. Water (20734441), 14(22), 3766. 
     ```
 
-4. USED隨著人工智慧發展，各種機器學習模型也如雨後春筍般出現，如Imran et al.(2022)開發一種基於多元多項式迴歸（MPR）的機器學習模型，比較線性迴歸及支援向量機模型後發現，MPR在性能評估指標包含R²（R-squared）和RMSE（Root-Mean-Square Error）上皆優於另外兩個模型。Imran et al.(2022)所提出的MPR公式如(1)所示，其中y ̂是輸出變數，w_0是截距，w_1、w_2…w_s為多項式迴歸係數，x為輸入變數，表示具有n個輸入變數和階數（s > 1）的MPR系統。![pic1](<../image/Imran et al.(2022).png>)(1)
+4. 隨著人工智慧發展，各種機器學習模型也如雨後春筍般出現，如Imran et al.(2022)開發一種基於多元多項式迴歸（MPR）的機器學習模型，比較線性迴歸及支援向量機模型後發現，MPR在性能評估指標包含R²（R-squared）和RMSE（Root-Mean-Square Error）上皆優於另外兩個模型。Imran et al.(2022)所提出的MPR公式如(1)所示，其中y ̂是輸出變數，w_0是截距，w_1、w_2…w_s為多項式迴歸係數，x為輸入變數，表示具有n個輸入變數和階數（s > 1）的MPR系統。![pic1](<../image/Imran et al.(2022).png>)(1)
     ```
     Imran, H., Al-Abdaly, N. M., Shamsa, M. H., Shatnawi, A., Ibrahim, M., & Ostrowski, K. A. (2022). Development of prediction model to predict the compressive strength of eco-friendly concrete using multivariate polynomial regression combined with stepwise method. Materials, 15(1), 317.
     ```
 
-5. USED其他研究成果如Narayan & Daniel.(2022)使用MPR模型驗證其預測結果
+5. 其他研究成果如Narayan & Daniel.(2022)使用MPR模型驗證其預測結果
     ```
     Narayan, V., & Daniel, A. K. (2022). Energy Efficient Protocol for Lifetime Prediction of Wireless Sensor Network using Multivariate Polynomial Regression Model.
     ```
 
-6. USED如圖2所示，Canamero et al.(2023)以MPR建立了一個六元多項式迴歸模型，結果顯示其訓練集的MAPE（Mean Absolute Percentage Error）為1.873%，MAE（Mean Absolute
+6. 如圖2所示，Canamero et al.(2023)以MPR建立了一個六元多項式迴歸模型，結果顯示其訓練集的MAPE（Mean Absolute Percentage Error）為1.873%，MAE（Mean Absolute
     ```
     Zeini, H. A., Lwti, N. K., Imran, H., Henedy, S. N., Bernardo, L. F. A., & Al-Khafaji, Z. (2023). Prediction of the Bearing Capacity of Composite Grounds Made of Geogrid-Reinforced Sand over Encased Stone Columns Floating in Soft Soil Using a White-Box Machine Learning Model. Applied Sciences, 13(8), 5131.
     ```
@@ -146,12 +146,12 @@
     Dwivedi, Y. K., Hughes, L., Ismagilova, E., Aarts, G., Coombs, C., Crick, T., ... & Williams, M. D. (2021). Artificial Intelligence (AI): Multidisciplinary perspectives on emerging challenges, opportunities, and agenda for research, practice and policy. International Journal of Information Management, 57, 101994.
     ```
 
-2. USED近十年來，人工智慧從理論發展到實際應用，生成式 AI 等工具也被廣泛運用於日常問題的解決[2]
+2. 近十年來，人工智慧從理論發展到實際應用，生成式 AI 等工具也被廣泛運用於日常問題的解決[2]
     ```
     Shao, Z., Zhao, R., Yuan, S., Ding, M., & Wang, Y. (2022). Tracing the evolution of AI in the past decade and forecasting the emerging trends. Expert Systems with Applications, 209, 118221.
     ```
 
-3. USED人工智慧未來將成為人類不可或缺的夥伴[3]
+3. 人工智慧未來將成為人類不可或缺的夥伴[3]
     ```
     Aggarwal, K., Mijwil, M. M., Al-Mistarehi, A. H., Alomari, S., Gök, M., Alaabdin, A. M. Z., & Abdulrhman, S. H. (2022). Has the future started? The current growth of artificial intelligence, machine learning, and deep learning. Iraqi Journal for Computer Science and Mathematics, 3(1), 115-123.
     ```
@@ -181,22 +181,22 @@
     Verdonck, T., Baesens, B., Óskarsdóttir, M., & vanden Broucke, S. (2024). Special issue on feature engineering editorial. Machine Learning, 113(7), 3917-3928.
     ```
 
-9. USEDMPR相較於傳統的線性迴歸（Linear Regression, LR）模型，在水質資料分析上表現更優越，且亦有研究指出MPR較支援向量機（Support Vector Machine, SVM）[9]
+9. MPR相較於傳統的線性迴歸（Linear Regression, LR）模型，在水質資料分析上表現更優越，且亦有研究指出MPR較支援向量機（Support Vector Machine, SVM）[9]
     ```
     Imran, H., Al-Abdaly, N. M., Shamsa, M. H., Shatnawi, A., Ibrahim, M., & Ostrowski, K. A. (2022). Development of prediction model to predict the compressive strength of eco-friendly concrete using multivariate polynomial regression combined with stepwise method. Materials, 15(1), 317.
     ```
 
-10. USED及隨機森林樹（Random Forest, RF）[10]更佳
+10. 及隨機森林樹（Random Forest, RF）[10]更佳
     ```
     Zeini, H. A., Lwti, N. K., Imran, H., Henedy, S. N., Bernardo, L. F. A., & Al-Khafaji, Z. (2023). Prediction of the Bearing Capacity of Composite Grounds Made of Geogrid-Reinforced Sand over Encased Stone Columns Floating in Soft Soil Using a White-Box Machine Learning Model. Applied Sciences, 13(8), 5131.
     ```
 
-11. USEDXGBoost在資料科學領域中被廣泛使用，也在Kaggle許多機器學習及競賽中取得最佳結果，其特點為有非常強的擴展性（Scalibility）與性能，可以使用相對其他模型更少的系統資源，擴充數十億級別的資料[11]
+11. XGBoost在資料科學領域中被廣泛使用，也在Kaggle許多機器學習及競賽中取得最佳結果，其特點為有非常強的擴展性（Scalibility）與性能，可以使用相對其他模型更少的系統資源，擴充數十億級別的資料[11]
     ```
     Chen, T., & Guestrin, C. (2016, August). XGBoost: A scalable tree boosting system. In Proceedings of the 22nd ACM SIGKDD International Conference on Knowledge Discovery and Data Mining (pp. 785-794). New York, NY, United States.
     ```
 
-12. USEDLightGBM是一種高效能的梯度提升決策樹，在傳統Gradient Boosting Decision Tree（GBDT）演算法上加入使用Gradient-based One-Side Sampling（GOSS）和 Exclusive Feature Bunding （EFB），並顯示出LightGBM相較傳統的GBDT加快了20倍以上的速度，同時也並未降低準確性[12]
+12. LightGBM是一種高效能的梯度提升決策樹，在傳統Gradient Boosting Decision Tree（GBDT）演算法上加入使用Gradient-based One-Side Sampling（GOSS）和 Exclusive Feature Bunding （EFB），並顯示出LightGBM相較傳統的GBDT加快了20倍以上的速度，同時也並未降低準確性[12]
     ```
     Ke, G., Meng, Q., Finley, T., Wang, T., Chen, W., Ma, W., ... & Liu, T. Y. (2017). LightGBM: A highly efficient gradient boosting decision tree. Advances in Neural Information Processing Systems, 30.
     ```

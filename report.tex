@@ -121,14 +121,26 @@
         \item 資料取得\\
         　　本研究將參考「運用智慧型綠能永續景觀噴泉促進環境保育效益之研究」計畫（編號：MOST110-2410-H025-024）所蒐集的水質資料，並結合中華民國環境部全國環境水質監測資訊網的公開資料，共計蒐集了87,005筆水質資料。本研究所採用的水質參數包括溶氧量（DO）、生物需氧量（BOD）、懸浮固體（SS）、氨氮（NH3-N）及導電度（EC）。研究中將使用多元多項式迴歸（MPR）模型對各項水質資料進行機器學習分析。如圖所示，不同資料之間存在交互影響水質健康的關係，例如：DO濃度越高，NH3-N及EC濃度越低；NH3-N濃度越高，EC越高。此外，DO與水質綜合評分之關係顯示其為重要指標之一，而BOD、NH3-N、EC及SS與水質綜合評分之關係則顯示其為水質污染的指標。        
         \item 資料前處理\\
-        
+        　　在進行機器學習模型訓練前，需對蒐集的原始資料進行前處理，以減少母體資料中的不確定性。此過程可以透過Pandas來完成，主要步驟包括：(A)遺失值處理、(B)異常值處理、(C)標準化、(D)資料拆分及(E)特徵工程等。各項操作重點說明如下：
+            \begin{enumerate}[label=\Alph*.]
+                \item 遺失值處理\\
+                　　在機器學習資料前處理階段，需要處理原始水質資料中的遺失值（Missing Value），處理方式通常有兩種：直接刪除或進行填補。雖然直接刪除較為快速，但可能會對模型建構的完整性產生隱患，考慮到模型訓練需要連續分佈的資料，實作上可選擇以填補的方式保持水質資料的完整性，方式包括使用常見值填補、平均值填補、模型預測填補、相似案例填補或使用特殊標記表示遺失值\cite{ref24}。本研究將以NumPy及Pandas對水質資料進行遺失值處理，首先使用NumPy的numpy.nan表示缺失值，接著以Pandas提供的isnull()函式尋找資料中是否存在缺失值，最後使用fillna()函式進行填補。
+                \item 異常值處理\\
+                　　除了遺失值的處理外，異常值的檢測與處理也是資料清理中重要的一環。本研究使用修剪法（Trimming）排除機器學習模型資料集中的異常極端值，於整體水質資料集中，刪除中位數1\%及99\%之極端值，提升模型的性能\cite{ref25}。在經過資料清理排除水質資料集中的異常值後，最後剩餘60,714組水質資料作為模型資料集。
+                \item 標準化\\
+                　　正規化（Normalization）將數值資料縮放到[0, 1]的範圍，可能會導致異常值造成的資料遺失，因此使用標準化（Standardization）更佳。標準化將輸入參數的均值（μ=0）和方差（σ=1）進行調整，使資料更符合常態分佈\cite{ref26}。本研究使用Scikit-learn的StandardScaler函式進行標準化，將水質資料集中的數值資料進行標準化處理。
+                \item 資料拆分\\
+                　　
+                \item 特徵工程\\
+                　　
+            \end{enumerate}
         \item 模型選擇與比較\\
         
         \item 超參數調整\\
         
         \item 改良與測試\\
         
-        \item 實現系統化
+        \item 實現系統化\\
         
     \end{enumerate}
 \item 執行進度\\
@@ -171,6 +183,9 @@
 \bibitem{ref21} Bill Lubanovic. (2024). FastAPI. O’Reilly Media.
 \bibitem{ref22} Bansal, P., \& Ouda, A. (2022, July). Study on integration of fastapi and machine learning for continuous authentication of behavioral biometrics. In 2022 International Symposium on Networks, Computers and Communications (ISNCC) (pp. 1-6). IEEE.
 \bibitem{ref23} Native, R. (2020). React native. línea]. Disponible en: https://reactnative. dev/.[Último acceso: 2 de noviembre 2019].
+\bibitem{ref24} Kotsiantis, S. B., Kanellopoulos, D., \& Pintelas, P. E. (2006). Data preprocessing for supervised leaning. International journal of computer science, 1(2), 111-117.
+\bibitem{ref25} Burlig, F., Knittel, C., Rapson, D., Reguant, M., \& Wolfram, C. (2020). Machine learning from schools about energy efficiency. Journal of the Association of Environmental and Resource Economists, 7(6), 1181-1217.
+\bibitem{ref26} Sharma, P., \& Singh, J. (2018, September). Machine learning based effort estimation using standardization. In 2018 International Conference on Computing, Power and Communication Technologies (GUCON) (pp. 716-720).  Greater Noida, NCR New Delhi, India.
 \end{thebibliography}
 
 \end{enumerate}	
