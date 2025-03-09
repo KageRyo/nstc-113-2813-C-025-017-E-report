@@ -163,7 +163,7 @@
         　　本研究將參考「運用智慧型綠能永續景觀噴泉促進環境保育效益之研究」計畫（編號：MOST110-2410-H025-024）所蒐集的水質資料，並結合中華民國環境部全國環境水質監測資訊網的公開資料，共計蒐集了87,005筆水質資料。本研究所採用的水質參數包括溶氧量（DO）、生物需氧量（BOD）、懸浮固體（SS）、氨氮（NH3-N）及導電度（EC）。研究中將使用多元多項式迴歸（MPR）模型對各項水質資料進行機器學習分析。如圖所示，不同資料之間存在交互影響水質健康的關係，例如：DO濃度越高，NH3-N及EC濃度越低；NH3-N濃度越高，EC越高。此外，DO與水質綜合評分之關係顯示其為重要指標之一，而BOD、NH3-N、EC及SS與水質綜合評分之關係則顯示其為水質污染的指標。        
             \begin{figure}[H]
                 \centering
-                \includegraphics[width=0.55\textwidth]{resources/image/heatmap.png}
+                \includegraphics[width=0.5\textwidth]{resources/image/heatmap.png}
                 \caption{相關性分析矩陣}
                 \label{fig:correlation_matrix}
             \end{figure}
@@ -232,12 +232,18 @@
                 \item 前端行動裝置應用程式開發\\
                 　　在本研究中，使用JavaScript語言和React Native進行前端（Front-End）行動裝置應用程式（Mobile Application, APP）的開發，目的是實現具機器學習功能的智慧化水質分析與評估系統、以及多元多項式迴歸模型的前端部分，如圖9所示。React Native的使用使本研究無需借助Android專用的Android Studio或蘋果公司的Xcode等編輯環境。相反，採用Expo和Visual Studio Code作為前端應用程式的整合開發環境，這樣可以在開發過程中使用Expo Go在Android和iOS裝置上即時預覽應用程式的效果。\\
                 　　在開發過程中，本研究主要透過FETCH呼叫後端（Back-End）上的MPR模型程式，將使用者的水質資料POST至API伺服器，並接收回傳結果以顯示報表資訊，從而為使用者提供改善水質的建議。
+                    \begin{figure}[H]
+                        \centering
+                        \includegraphics[width=0.6\textwidth]{resources/image/使用者流程圖.png}
+                        \caption{使用者流程圖}
+                        \label{fig:user_flow}
+                    \end{figure}
             \end{enumerate}
     \end{enumerate}
 \item 執行進度\\
 　　本研究自2024年7月1日起開始執行，以甘特圖（Gantt Chart）進行嚴謹的規劃和執行，於2025年2月28日結案，共計執行約8個月。在8個月內完成了實作目標與相關內容，包括水質資料分析模型的比較、選擇與建構，以及智慧化水質分析與評估系統的開發與部署。研究主軸為找出最適合進行水質資料分析的模型並實際應用。各項步驟方向確認至最終完成如下表所示。
 \item 遭遇之困難與解決途徑\\
-　　[內容]
+　　[內容 TODO]
 \end{enumerate}
 
 \item[(三)] 完成之工作項目及成果。
