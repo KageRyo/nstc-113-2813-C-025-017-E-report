@@ -232,14 +232,14 @@
                 \item 前端行動裝置應用程式開發\\
                 　　在本研究中，使用JavaScript語言和React Native進行前端（Front-End）行動裝置應用程式（Mobile Application, APP）的開發，目的是實現具機器學習功能的智慧化水質分析與評估系統、以及多元多項式迴歸模型的前端部分，如圖9所示。React Native的使用使本研究無需借助Android專用的Android Studio或蘋果公司的Xcode等編輯環境。相反，採用Expo和Visual Studio Code作為前端應用程式的整合開發環境，這樣可以在開發過程中使用Expo Go在Android和iOS裝置上即時預覽應用程式的效果。\\
                 　　在開發過程中，本研究主要透過FETCH呼叫後端（Back-End）上的MPR模型程式，將使用者的水質資料POST至API伺服器，並接收回傳結果以顯示報表資訊，從而為使用者提供改善水質的建議。
-                    \begin{figure}[H]
-                        \centering
-                        \includegraphics[width=0.6\textwidth]{resources/image/使用者流程圖.png}
-                        \caption{使用者流程圖}
-                        \label{fig:user_flow}
-                    \end{figure}
             \end{enumerate}
     \end{enumerate}
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.6\textwidth]{resources/image/使用者流程圖.png}
+        \caption{使用者流程圖}
+        \label{fig:user_flow}
+    \end{figure}
 \item 執行進度\\
 　　本研究自2024年7月1日起開始執行，以甘特圖（Gantt Chart）進行嚴謹的規劃和執行，於2025年2月28日結案，共計執行約8個月。在8個月內完成了實作目標與相關內容，包括水質資料分析模型的比較、選擇與建構，以及智慧化水質分析與評估系統的開發與部署。研究主軸為找出最適合進行水質資料分析的模型並實際應用。各項步驟方向確認至最終完成如下表所示。
 \item 遭遇之困難與解決途徑\\
@@ -249,11 +249,69 @@
 \item[(三)] 完成之工作項目及成果。
 \begin{enumerate}[label=\arabic*.]
 \item 完成之工作項目\\
-　　[內容]
+　　本研究執行期間完成之工作項目包括文獻回顧與探討、AI水質分析機器學習模型的訓練、進行實驗以比較不同機器學習模型對水質分析的效能差異、雲端伺服器架設與部署及智慧化水質分析與評估系統APP開發......等。
 \item 完成之研究成果\\
-　　[內容]
+　　本研究計畫完成之研究成果大致可分為(3-2-1)AI水質分析機器學習模型比較及(3-2-2)智慧化水質分析與評估系統兩部分。兩部分詳細說明如下：
+    \begin{enumerate}[label=3-2-\arabic*.]
+        \item AI水質分析機器學習模型比較\\
+        　　為能有效進行水質資料的分析與評估，研究重點為設計一個能達成計畫目標之機器學習模型。模型選擇如「(二)研究步驟」中「(2-2-3)模型選擇與比較」之內容所述。評估以線性迴歸（LR）、支援向量機（SVM）、隨機森林樹（RF）、多元多項式迴歸（MPR）、XGBoost及LightGBM進行比較，並選擇最適合進行水質資料分析的模型。最終成果將以模型的決定係數（R²）、均方根誤差（RMSE）及平均絕對誤差（MAE）等指標進行評估，並選擇最適合進行水質資料分析的模型。\\
+        　　模型開發亦如「(二)研究步驟」之內容所述，以前期「運用智慧型綠能永續景觀噴泉促進環境保育效益之研究」計畫所蒐集之水質資料結合中華民國環境部全國環境水質監測資訊網的公開資料，共計87,005筆水質資料進行運用。並將開發之機器學習模型將部署於雲端平臺，提供大量水質資料處理所需的運算能力。\\
+        　　為能有效評估水質資料，本研究使用水體品質指標（Water Quality Index, WQI$_5$）WQI能夠將大量水質資料轉換如等級一樣的數值，比起各種參數的一長算數值更容易理解與運用，使人們更容易理解水質資料呈現的結果\cite{ref35}。WQI的公式如公式(6)所示，同時，本研究在訓練過程中依照WQI$_5$版本為各項水質資料項目加上權重如表2所示，再依分析結果依表3進行評級，使分析結果具有客觀的可信度。\\
+        \begin{equation}
+            WQI_5 = \frac{\sum_{i=1}^5 (W_i Q_i)^{1.5}}{10}
+        \end{equation}
+            \begin{table}[H]
+                \centering
+                    \begin{minipage}[t]{0.45\textwidth}
+                        \centering
+                        \caption{WQI$_5$水質參數項目與權重}
+                            \begin{tabular}{cc}
+                            \hline
+                            WQI$_5$ 水質參數項目 & 權重 \\
+                            \hline
+                            溶氧（DO） & 0.31 \\
+                            生化需氧量（BOD5） & 0.26 \\
+                            氨氮（NH3-N） & 0.19 \\
+                            懸浮固體（SS） & 0.17 \\
+                            電導率（EC） & 0.07 \\
+                            \hline
+                        \end{tabular}
+                        \label{table:wqi_weights}
+                    \end{minipage}
+                    \begin{minipage}[t]{0.45\textwidth}
+                        \centering
+                        \caption{WQI$_5$水質指數範圍與評級}
+                        \begin{tabular}{cc}
+                        \hline
+                        指數範圍 & 評級 \\
+                        \hline
+                        WQI$_5>100$ & N/A \\
+                        $85<$WQI$_5\leq100$ & 優良 \\
+                        $70<$WQI$_5\leq85$ & 良好 \\
+                        $50<$WQI$_5\leq70$ & 中等 \\
+                        $30<$WQI$_5\leq50$ & 不良 \\
+                        $15<$WQI$_5\leq30$ & 糟糕 \\
+                        $0<$WQI$_5\leq15$ & 惡劣 \\
+                        \hline
+                    \end{tabular}
+                    \label{table:wqi_grades}
+                    \end{minipage}
+            \end{table}
+            \begin{enumerate}[label=\Alph*.]
+                \item AI水質分析機器學習模型殘差\\
+                　　
+                \item AI水質分析機器學習模型指標\\
+                　　
+            \end{enumerate}
+        \item 智慧化水質分析與評估系統\\
+    \end{enumerate}
 \item 學術研究、國家發展及其他應用方面預期之貢獻\\
-　　[內容]
+　　本計畫旨在提供一個快速且準確，基於機器學習的智慧化水質評估方案，期望開發成果能成為解決水質問題的實用工具。本計畫在研究上需要結合跨領域的專業知識與技術，因此相關成果將在整理分析後進行論文發表，預計能對資訊工程、人工智慧、水資源管理和環境生態保育等領域產生有意義的價值與貢獻。
+    \begin{enumerate}[label=3-3-\arabic*.]
+        \item 參加 PyCon Taiwan 2024 臺灣 Python 年會 Poster Session
+        \item 參加 2024 國際民生電子研討會並獲得論文佳作獎
+        \item 前期計畫相關研究成果發表期刊並接受
+    \end{enumerate}
 \end{enumerate}
 
 \begin{thebibliography}{99}
@@ -290,6 +348,7 @@
 \bibitem{ref32} Breiman, L. (2001). Random forests. Machine learning, 45, 5-32.
 \bibitem{ref33} Sinha, P. (2013). Multivariate polynomial regression in data mining: methodology, problems and solutions. Int. J. Sci. Eng. Res, 4(12), 962-965.
 \bibitem{ref34} Berrar, D. (2019) Cross-Validation. In: Ranganathan, S., Gribskov, M., Nakai, K. and Christian Schönbach, C., Eds., Reference Module in Life Sciences Encyclopedia of Bioinformatics and Computational Biology, Vol. 1, Elsevier, Amsterdam, 542-545.
+\bibitem{ref35} Abdul Hameed M Jawad, A., Bahram K, M., \& Abass J, K. (2010). Evaluating raw and treated water quality of Tigris River within Baghdad by index analysis. journal of water resource and protection, 2010.
 
 \end{thebibliography}
 
