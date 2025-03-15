@@ -11,8 +11,8 @@
 \setCJKmainfont{DFKai-SB}     % 標楷體
 \setmainfont{Times New Roman}
 % 中文自動換行
-\XeTeXlinebreaklocale "zh"             
-\XeTeXlinebreakskip = 0pt plus 1pt     
+\XeTeXlinebreaklocale "zh"
+\XeTeXlinebreakskip = 0pt plus 1pt
 
 % 紙張格式
 \usepackage{geometry}
@@ -54,24 +54,23 @@
 \def\figure{\@ifnextchar[{\oldfigure}{\oldfigure[\relax]\noindent}}
 \makeatother
 
-% \lfoot{表 CM03}
 \rfoot{共~~\pageref{LastPage}~~頁~~第{~~\thepage~~}頁}
 
 \begin{document}
 
-\noindent{\bf \large 基於機器學習實現智慧化水質分析與評估系統} 
+\noindent{\bf \large 基於機器學習實現智慧化水質分析與評估系統}
 
 \begin{enumerate}
 \item[(一)] 研究計畫之背景。
 \begin{enumerate}[label=\arabic*.]
 \item 研究計畫之背景\\
-　　本研究旨在開發並實現具機器學習（Machine Learning, ML）功能的智慧化水質分析與評估系統，以解決目前水質資料分析缺乏高效率方法的問題。研究作者曾擔任科技部計畫兼任研究助理，協助執行「運用智慧型綠能永續景觀噴泉促進環境保育效益之研究」（計畫編號：MOST 110-2410-H025-024），該計畫運用物聯網（Internet of Things, IoT）技術蒐集南投麒麟潭的水質資料。藉由該計畫經驗發現自動化運行的結果相較於人工記錄更有效率，但後續資料分析仍需耗費大量工作時間。
+　　本研究旨在開發並實現具機器學習（Machine Learning,ML）功能的智慧化水質分析與評估系統，以解決目前水質資料分析缺乏高效率方法的問題。研究作者曾擔任科技部計畫兼任研究助理，協助執行「運用智慧型綠能永續景觀噴泉促進環境保育效益之研究」（計畫編號：MOST110-2410-H025-024），該計畫運用物聯網（Internet of Things,IoT）技術蒐集南投麒麟潭的水質資料。藉由該計畫經驗發現自動化運行的結果相較於人工記錄更有效率，但後續資料分析仍需耗費大量工作時間。
 \item 研究問題\\
 　　在水質資料分析方面，除了使用Microsoft Excel直接計算外，通常會使用如Statistical Analysis System（SAS）或Statistical Product and Service Solutions（SPSS）等統計專有軟體（Proprietary Software）。然而，這些軟體為專有（Proprietary）且非開源，不僅需要額外購買授權，還需投入時間學習才能熟練使用。由於其操作高度依賴使用者的專業知識，分析結果可能因個人經驗而有所差異。由於這些軟體無法修改與物聯網設備直接進行資料串聯傳輸，造成未來計畫整合實現自動化資料收集與資料分析的障礙。
 \item 研究原創性\\
-　　近十年來，人工智慧（Artificial Intelligence, AI）從理論發展到實際應用，各種AI等工具也被廣泛運用於日常問題成為解決方案\cite{ref1}。本研究運用人工智慧中的機器學習技術，開發一套智慧化水質分析與評估系統，實現更高效且易於操作的創新水質分析方法。不同於傳統統計軟體需要人工輸入與分析，本系統將結合自動化資料處理與機器學習演算法，以提升水質分析的準確性與效率。此外，本研究將探索AI在水資源管理與環境保育領域的創新應用，提供創新的智慧化水質資料分析方案。\\  
-　　為了找出最適合水質分析的機器學習模型，本研究針對XGBoost、LightGBM、支援向量機（Support Vector Machine, SVM）、隨機森林（Random Forest, RF）、多元多項式迴歸（Multiple Polynomial Regression, MPR）以及線性迴歸（Linear Regression, LR）等多種模型進行比較與評估。透過實驗分析與比較不同模型在水質資料分析準確度、計算效能與資料適應性的表現，進一步應用於改良水質分析，使系統能夠有效應對水體環境的分析與評估需求。\\
-　　實驗設計包括使用先前於「運用智慧型綠能永續景觀噴泉促進環境保育效益之研究」計畫中，使用物聯網設備實際蒐集的水質資料，加上環境部環境資料開放平臺公開資料使用，特徵選擇包括溶解氧（DO）、生化需氧量（BOD）、氨氮（NH3-N）、電導度（EC）和懸浮固體（SS）等關鍵指標。在訓練過程中，使用水體品質指標（Water Quality Index, WQI$_5$）作為標記資料進行監督式學習。
+　　近十年來，人工智慧（Artificial Intelligence,AI）從理論發展到實際應用，各種AI等工具也被廣泛運用於日常問題成為解決方案\cite{ref1}。本研究運用人工智慧中的機器學習技術，開發一套智慧化水質分析與評估系統，實現更高效且易於操作的創新水質分析方法。不同於傳統統計軟體需要人工輸入與分析，本系統將結合自動化資料處理與機器學習演算法，以提升水質分析的準確性與效率。此外，本研究將探索AI在水資源管理與環境保育領域的創新應用，提供創新的智慧化水質資料分析方案。\\
+　　為了找出最適合水質分析的機器學習模型，本研究針對XGBoost、LightGBM、支援向量機（Support Vector Machine,SVM）、隨機森林（Random Forest,RF）、多元多項式迴歸（Multiple Polynomial Regression,MPR）以及線性迴歸（Linear Regression,LR）等多種模型進行比較與評估。透過實驗分析與比較不同模型在水質資料分析準確度、計算效能與資料適應性的表現，進一步應用於改良水質分析，使系統能夠有效應對水體環境的分析與評估需求。\\
+　　實驗設計包括使用先前於「運用智慧型綠能永續景觀噴泉促進環境保育效益之研究」計畫中，使用物聯網設備實際蒐集的水質資料，加上環境部環境資料開放平臺公開資料使用，特徵選擇包括溶解氧（DO）、生化需氧量（BOD）、氨氮（NH3-N）、電導度（EC）和懸浮固體（SS）等關鍵指標。在訓練過程中，使用水體品質指標（Water Quality Index,WQI$_5$）作為標記資料進行監督式學習。
     % 圖 1
     \begin{figure}[H]
         \centering
@@ -80,8 +79,8 @@
         \label{fig:usage_scenario}
     \end{figure}
 \item 研究重要性\\
-　　在過去十年內，人工智慧的研究從長期被忽視的陰霾中走了出來，被人們看見了希望且掀起了新一波風潮\cite{ref2}，而水資源管理與環境生態保育是全球關注的議題，而水質分析與評估是確保水資源安全的重要環節。本研究透過機器學習技術，克服傳統方法的效率瓶頸，降低對專業知識依賴，使水質資料分析變得更有效且易於操作，提升水質資料分析技術的普及性與可行性。\\  
-　　本研究針對XGBoost、LightGBM、支援向量機（SVM）、隨機森林（RF）、多元多項式迴歸（MPR）以及線性迴歸（LR）等機器學習模型進行獨立訓練，並透過決定係數（$R^2$）、均方根誤差（Root Mean Square Error, RMSE）、平均絕對誤差（Mean Absolute Error, MAE）以及殘差分析等指標評估各模型在水質資料分析上的準確性。\\  
+　　在過去十年內，人工智慧的研究從長期被忽視的陰霾中走了出來，被人們看見了希望且掀起了新一波風潮\cite{ref2}，而水資源管理與環境生態保育是全球關注的議題，而水質分析與評估是確保水資源安全的重要環節。本研究透過機器學習技術，克服傳統方法的效率瓶頸，降低對專業知識依賴，使水質資料分析變得更有效且易於操作，提升水質資料分析技術的普及性與可行性。\\
+　　本研究針對XGBoost、LightGBM、支援向量機（SVM）、隨機森林（RF）、多元多項式迴歸（MPR）以及線性迴歸（LR）等機器學習模型進行獨立訓練，並透過決定係數（$R^2$）、均方根誤差（Root Mean Square Error,RMSE）、平均絕對誤差（Mean Absolute Error,MAE）以及殘差分析等指標評估各模型在水質資料分析上的準確性。\\
 　　透過實驗分析，我們發現［TODO］。這些結果有助於選擇最適合水質資料分析的機器學習模型，進一步提升水資源管理的準確度，為環境監測技術與未來相關研究的發展提供有效的參考依據。
 \item 預期影響性\\
 　　本研究的智慧化水質分析與評估系統結合了模型比較實驗與系統開發，有望在以下方面產生影響：
@@ -93,13 +92,12 @@
 \item 國內外研究情況\\
 　　本研究作者先前參與的計畫已經使用物聯網技術進行水質資料的採集，這種方法在環境監測中已經相當普遍。然而，目前國內外針對水質資料分析的智慧化系統，特別是結合機器學習技術的水質分析系統相對較少。機器學習技術在水質評估中的應用已被證明是有效的，並逐漸成為水資源管理的重要分析工具\cite{ref4}，應用各種技術構建學習模型，能夠達成提供即時準確水質資訊的目的，期望得以透過早期診斷水質異常以改善公共健康\cite{ref5}因此，本研究具有創新性和獨特性，有助於填補水質資料分析中高效方法的空白。
 \item 重要參考文獻\\
-　　隨著人工智慧發展，各種機器學習模型也如雨後春筍般出現。模型實作上如開發一種基於多元多項式迴歸（MPR）的機器學習模型，在該研究中以模型與線性迴歸及支援向量機模型進行比較，發現MPR在性能評估指標包含R²（R-squared）和RMSE（Root-Mean-Square Error）上皆優於另外兩個模型\cite{ref6}，其提出的MPR公式如(1)所示，其中 $\hat{y}$ 是輸出變數，$w_0$ 是截距，$w_1, w_2, \ldots, w_s$ 為多項式迴歸係數，$x$ 為輸入變數，表示具有 $n$ 個輸入變數和階數（$s > 1$）的 MPR 系統。加上其他研究成果使用MPR模型驗證其預測結果\cite{ref7}，如圖2所示，MPR建立了一個六元多項式迴歸模型，結果顯示其訓練集的MAPE（Mean Absolute Percentage Error）為1.873\%，MAE（Mean Absolute Error）為（TODO待確認），證明了MPR模型在水質資料分析上的優越性\cite{ref8}。這些研究成果將有助於本研究的模型選擇與效能評估，也因此本研究前期採用MPR模型作為基準模型進行比較。\\
+　　隨著人工智慧發展，各種機器學習模型也如雨後春筍般出現。模型實作上如開發一種基於多元多項式迴歸（MPR）的機器學習模型，在該研究中以模型與線性迴歸及支援向量機模型進行比較，發現MPR在性能評估指標包含R²（R-squared）和RMSE（Root-Mean-Square Error）上皆優於另外兩個模型\cite{ref6}，其提出的MPR公式如(1)所示，其中 $\hat{y}$ 是輸出變數，$w_0$ 是截距，$w_1,w_2,\ldots,w_s$ 為多項式迴歸係數，$x$ 為輸入變數，表示具有 $n$ 個輸入變數和階數（$s>1$）的 MPR 系統。加上其他研究成果使用MPR模型驗證其預測結果\cite{ref7}，如圖2所示，MPR建立了一個六元多項式迴歸模型，結果顯示其訓練集的MAPE（Mean Absolute Percentage Error）為1.873\%，MAE（Mean Absolute Error）為（TODO待確認），證明了MPR模型在水質資料分析上的優越性\cite{ref8}。這些研究成果將有助於本研究的模型選擇與效能評估，也因此本研究前期採用MPR模型作為基準模型進行比較。\\
     \begin{equation}
-        \hat{y} = w_0 + \sum_{i_1=1}^{n} w_{i_1} x_{i_1} + \sum_{i_1=1}^{n} \sum_{i_2=i_1}^{n} w_{i_1 i_2} x_{i_1} x_{i_2} + ... \\
-        + \sum_{i_1=1}^{n} \sum_{i_2=i_1}^{n} ... \sum_{i_k=i_{k-1}}^{n} w_{i_1 i_2 ... i_k} x_{i_1} x_{i_2} ... x_{i_k}
+        \hat{y} = w_0 + \sum_{i_1=1}^{n} w_{i_1} x_{i_1} + \sum_{i_1=1}^{n} \sum_{i_2=i_1}^{n} w_{i_1 i_2} x_{i_1} x_{i_2} + \cdots + \sum_{i_1=1}^{n} \sum_{i_2=i_1}^{n} \cdots \sum_{i_k=i_{k-1}}^{n} w_{i_1 i_2 \cdots i_k} x_{i_1} x_{i_2} \cdots x_{i_k}
     \end{equation}
-　　另外，隨著近年來XGBoost與LightGBM等新興模型在機器學習領域中的崛起，本研究在中後期將其納入比較範疇，XGBoost在資料科學領域中被廣泛使用，也在Kaggle許多機器學習及競賽中取得最佳結果，其特點為有非常強的擴展性（Scalibility）與性能，可以使用相對其他模型更少的系統資源，擴充數十億級別的資料\cite{ref9}。而LightGBM是一種高效能的梯度提升決策樹，在傳統Gradient Boosting Decision Tree（GBDT）演算法上加入使用Gradient-based One-Side Sampling（GOSS）和Exclusive Feature Bunding （EFB），並顯示出LightGBM相較傳統的GBDT加快了20倍以上的速度，同時也並未降低準確性\cite{ref10}。\\
-　　綜合以上重要參考文獻，本研究對XGBoost、LightGBM、支援向量機（Support Vector Machine, SVM）、隨機森林（Random Forest, RF）、多元多項式迴歸（Multiple Polynomial Regression, MPR）以及線性迴歸（Linear Regression, LR）等多種模型進行比較與評估，期望找出最適合水質分析的機器學習模型，並提升水質分析的準確性與效率。
+　　另外，隨著近年來XGBoost與LightGBM等新興模型在機器學習領域中的崛起，本研究在中後期將其納入比較範疇，XGBoost在資料科學領域中被廣泛使用，也在Kaggle許多機器學習及競賽中取得最佳結果，其特點為有非常強的擴展性（Scalibility）與性能，可以使用相對其他模型更少的系統資源，擴充數十億級別的資料\cite{ref9}。而LightGBM是一種高效能的梯度提升決策樹，在傳統Gradient Boosting Decision Tree（GBDT）演算法上加入使用Gradient-based One-Side Sampling（GOSS）和Exclusive Feature Bunding（EFB），並顯示出LightGBM相較傳統的GBDT加快了20倍以上的速度，同時也並未降低準確性\cite{ref10}。\\
+　　綜合以上重要參考文獻，本研究對XGBoost、LightGBM、支援向量機（Support Vector Machine,SVM）、隨機森林（Random Forest,RF）、多元多項式迴歸（Multiple Polynomial Regression,MPR）以及線性迴歸（Linear Regression,LR）等多種模型進行比較與評估，期望找出最適合水質分析的機器學習模型，並提升水質分析的準確性與效率。
     % 圖 2
     \begin{figure}[H]
         \centering
@@ -112,7 +110,7 @@
 \item[(二)] 研究方法、進行步驟及執行進度。
 \begin{enumerate}[label=\arabic*.]
 \item 研究方法\\
-　　本研究開發之智慧化水質分析與評估系統採用前後端分離架構，透過應用程式介面（Application Programming Interface, API）進行資料傳遞與呼叫。後端（Back-end）水質資料分析模型以Python程式語言開發，運用NumPy、Pandas及Scikit-learn等工具進行水質資料的處理和分析。前端（Front-end）則以JavaScript語言的React Native框架開發行動裝置應用程式，實現跨系統平臺操作。此架構的水質資料分析模型開發可歸納為四個步驟：匯入資料、資料處理、特徵工程及模型訓練與評估。系統建置完成後，使用者在前端行動裝置應用程式中只需輸入欲分析的水質資料，即可經由已訓練完成的機器學習模型進行分析，再於使用者介面（UI）將產生一份分析報表，包括水質狀況的綜合評分以及狀態說明。\\
+　　本研究開發之智慧化水質分析與評估系統採用前後端分離架構，透過應用程式介面（Application Programming Interface,API）進行資料傳遞與呼叫。後端（Back-end）水質資料分析模型以Python程式語言開發，運用NumPy、Pandas及Scikit-learn等工具進行水質資料的處理和分析。前端（Front-end）則以JavaScript語言的React Native框架開發行動裝置應用程式，實現跨系統平臺操作。此架構的水質資料分析模型開發可歸納為四個步驟：匯入資料、資料處理、特徵工程及模型訓練與評估。系統建置完成後，使用者在前端行動裝置應用程式中只需輸入欲分析的水質資料，即可經由已訓練完成的機器學習模型進行分析，再於使用者介面（UI）將產生一份分析報表，包括水質狀況的綜合評分以及狀態說明。\\
     \begin{figure}[H]
         \centering
         \begin{minipage}{0.45\textwidth}
@@ -134,12 +132,12 @@
         \item 機器學習語言\\
         　　近年來Python在人工智慧領域中具有顯著影響力，因其優秀的資料處理與分析能力，支援各式開源函式庫使得Python成為資料分析的熱門選擇\cite{ref12}，且能夠有效處理即時、大型和非結構化資料\cite{ref13}，對於本研究進行各式水質資料分析的研究具有明顯的優勢。
         \item 機器學習環境\\
-        　　本研究機器學習環境主要分為(A)雲端運算平臺及(B)開發環境。正如所言「工欲善其事，必先利其器」，為了能夠有效率地進行整體系統的各項開發，並在完成後部署於雲端運算平臺。 
+        　　本研究機器學習環境主要分為(A)雲端運算平臺及(B)開發環境。正如所言「工欲善其事，必先利其器」，為了能夠有效率地進行整體系統的各項開發，並在完成後部署於雲端運算平臺。
                     \begin{enumerate}[label=\Alph*.]
                         \item 雲端運算平臺\\
-                        　　本研究運用機器學習框架－Scikit-learn進行功能開發，Scikit-learn著重高效能的運算資源利用，符合智慧化水質資料分析的應用需求。此外，亦將建置雲端平臺－開發與部署所建置之MPR模型於Google Cloud Platform（GCP），GCP為一種基礎結構即服務（IaaS）平臺，提供於雲端部署機器模型之能力。 
+                        　　本研究運用機器學習框架－Scikit-learn進行功能開發，Scikit-learn著重高效能的運算資源利用，符合智慧化水質資料分析的應用需求。此外，亦將建置雲端平臺－開發與部署所建置之MPR模型於Google Cloud Platform（GCP），GCP為一種基礎結構即服務（IaaS）平臺，提供於雲端部署機器模型之能力。
                         \item 開發環境\\
-                        　　本研究採用Visual Studio Code作為整合開發環境（Integrated Development Environment, IDE），並透過Docker實現容器化開發。可以直接將所開發之機器學習模型與應用程式部署至雲端平臺，運用分散式架構使得本研究具備處理和運算大量水質資料的能力。
+                        　　本研究採用Visual Studio Code作為整合開發環境（Integrated Development Environment,IDE），並透過Docker實現容器化開發。可以直接將所開發之機器學習模型與應用程式部署至雲端平臺，運用分散式架構使得本研究具備處理和運算大量水質資料的能力。
                     \end{enumerate}
         \item 功能函式庫\\
         　　程式開發所需之功能函式庫分為：(A)資料處理工具、(B)機器學習框架、(C)圖表繪製工具及(D)應用程式介面。實作上以模組化方式結合各項工具能有助於完成水質分析模型的建構，相關說明如下：
@@ -147,7 +145,7 @@
                 \item 資料處理工具\\
                 　　本研究以NumPy及Pandas作為資料處理工具，NumPy是Python程式語言中支援科學和數值計算的函式庫，也相容於Pandas、Matplotlib和Scikit-learn等工具\cite{ref14}。NumPy作為資料處理的主要工具是因為它提供了科學計算所需的基本資料結構\cite{ref15}。同時NumPy也提供豐富的數學運算、資料讀寫、線性代數、傅立葉變換和隨機數生成等功能函式\cite{ref16}。使用NumPy得以更有效率地處理原始資料，進一步提升程式的開發效率。而Pandas建立於NumPy的基礎之上，是一種用於格式化資料分析的開源Python函式庫，它能夠處理類似電子試算表格式的輸入資料，可以快速地進行資料載入、操作、對齊和合併等功能\cite{ref17}。
                 \item 機器學習框架\\
-                　　本研究採用了Scikit-learn作為機器學習框架，以建構研究所需的各種機器學習模型模型\cite{ref18}。支援Python程式的機器學習框架之中，Scikit-learn提供多樣的演算法，其特色包括具有良好的應用程式介面（Application Programming Interface, API）、詳細文檔說明及技術支援\cite{ref19}。由於Scikit-learn具有輕量而高效的特性，可使本研究實作能夠有效率地達到智慧化水質資料分析的應用需求。
+                　　本研究採用了Scikit-learn作為機器學習框架，以建構研究所需的各種機器學習模型模型\cite{ref18}。支援Python程式的機器學習框架之中，Scikit-learn提供多樣的演算法，其特色包括具有良好的應用程式介面（Application Programming Interface,API）、詳細文檔說明及技術支援\cite{ref19}。由於Scikit-learn具有輕量而高效的特性，可使本研究實作能夠有效率地達到智慧化水質資料分析的應用需求。
                 \item 圖表繪製工具\\
                 　　Matplotlib是一個多功能的Python繪圖函式庫，具有產生各種類型和格式圖表的功能，包括折線圖、散布圖、熱圖、直方圖、圓餅圖和立體圖形，同時也支援動畫和互動顯示\cite{ref20}。運用Matplotlib能夠以視覺化方式呈現多元多項式迴歸運算後的水質資料分析結果，使模型訓練結果呈現更生動以提升可讀性。
                 \item 應用程式介面\\
@@ -166,7 +164,7 @@
     \end{figure}
     \begin{enumerate}[label=2-2-\arabic*.]
         \item 資料取得\\
-        　　本研究將參考「運用智慧型綠能永續景觀噴泉促進環境保育效益之研究」計畫（編號：MOST110-2410-H025-024）所蒐集的水質資料，並結合中華民國環境部全國環境水質監測資訊網的公開資料，共計蒐集了87,005筆水質資料。本研究所採用的水質參數包括溶氧量（DO）、生物需氧量（BOD）、懸浮固體（SS）、氨氮（NH3-N）及導電度（EC）。研究中將使用多元多項式迴歸（MPR）模型對各項水質資料進行機器學習分析。如圖所示，不同資料之間存在交互影響水質健康的關係，例如：DO濃度越高，NH3-N及EC濃度越低；NH3-N濃度越高，EC越高。此外，DO與水質綜合評分之關係顯示其為重要指標之一，而BOD、NH3-N、EC及SS與水質綜合評分之關係則顯示其為水質污染的指標。        
+        　　本研究將參考「運用智慧型綠能永續景觀噴泉促進環境保育效益之研究」計畫（編號：MOST110-2410-H025-024）所蒐集的水質資料，並結合中華民國環境部全國環境水質監測資訊網的公開資料，共計蒐集了87,005筆水質資料。本研究所採用的水質參數包括溶氧量（DO）、生物需氧量（BOD）、懸浮固體（SS）、氨氮（NH3-N）及導電度（EC）。研究中將使用多元多項式迴歸（MPR）模型對各項水質資料進行機器學習分析。如圖所示，不同資料之間存在交互影響水質健康的關係，例如：DO濃度越高，NH3-N及EC濃度越低；NH3-N濃度越高，EC越高。此外，DO與水質綜合評分之關係顯示其為重要指標之一，而BOD、NH3-N、EC及SS與水質綜合評分之關係則顯示其為水質污染的指標。
             \begin{figure}[H]
                 \centering
                 \includegraphics[width=0.5\textwidth]{resources/image/heatmap.png}
@@ -181,30 +179,30 @@
                 \item 異常值處理\\
                 　　除了遺失值的處理外，異常值的檢測與處理也是資料清理中重要的一環。本研究使用修剪法（Trimming）排除機器學習模型資料集中的異常極端值，於整體水質資料集中，刪除中位數1\%及99\%之極端值，提升模型的性能\cite{ref25}。在經過資料清理排除水質資料集中的異常值後，最後剩餘60,714組水質資料作為模型資料集。
                 \item 標準化\\
-                　　正規化（Normalization）將數值資料縮放到[0, 1]的範圍，可能會導致異常值造成的資料遺失，因此使用標準化（Standardization）更佳。標準化將輸入參數的均值（μ=0）和方差（σ=1）進行調整，使資料更符合常態分佈\cite{ref26}。本研究使用Scikit-learn的StandardScaler函式進行標準化，將水質資料集中的數值資料進行標準化處理。
+                　　正規化（Normalization）將數值資料縮放到[0,1]的範圍，可能會導致異常值造成的資料遺失，因此使用標準化（Standardization）更佳。標準化將輸入參數的均值（μ=0）和方差（σ=1）進行調整，使資料更符合常態分佈\cite{ref26}。本研究使用Scikit-learn的StandardScaler函式進行標準化，將水質資料集中的數值資料進行標準化處理。
                 \item 資料拆分\\
                 　　為了有效的建構研究所需的多元多項式迴歸模型，本研究實作上以Scikit-learn提供的\texttt{train\_test\_split()}函式，將整體水質資料集分為訓練集和測試集，分別占總體資料的80\%和20\%，訓練集用於模型建構，測試集用於驗證模型\cite{ref27}。透過此方法拆分資料，能夠在訓練模型時適度避免過度擬合（Overfltting）現象的發生。
                 \item 特徵工程\\
                 　　特徵工程（Feature Engineering）在機器學習過程中至關重要，能將資料轉換成模型可以理解的特徵，或將變數處理成特徵\cite{ref28}。在水質分析的過程中，實作上將以Scikit-learn提供的PolynomialFeatures模組將原始資料的特徵轉換為多項式的形式。這個步驟能使模型觀察到各項特徵在非線性關係之間的相互影響，進而提升模型的擬合能力。藉由特徵工程的處理，本研究能夠更清楚地呈現各項水質資料之間的關係，以提升模型判斷的準確性。
             \end{enumerate}
         \item 模型選擇與比較\\
-        　　除了提案時使用的多元多項式迴歸（Multiple Polynomial Regression, MPR）模型外，能夠引入eXtreme Gradient Boosting（XGBoost）及Light Gradient Boosting Machine（LightGBM）等在結構化資料處理上表現優異的模型進行比較，以能找出更適合解決問題的模型。各模型詳細說明如下：
+        　　除了提案時使用的多元多項式迴歸（Multiple Polynomial Regression,MPR）模型外，能夠引入eXtreme Gradient Boosting（XGBoost）及Light Gradient Boosting Machine（LightGBM）等在結構化資料處理上表現優異的模型進行比較，以能找出更適合解決問題的模型。各模型詳細說明如下：
             \begin{enumerate}[label=\Alph*.]
-                \item 線性迴歸（Linear Regression, LR）\\
+                \item 線性迴歸（Linear Regression,LR）\\
                 　　線性迴歸（LR）是一種簡單但基本的監督式學習模型，透過線性方程式來預測目標變數的值，雖然LR與現代統計與機器學習技術方法相比顯得簡單，但仍具價值且為現代模型提供了基礎\cite{ref29}。
-                \item 支援向量機（Support Vector Machine, SVM）\\
+                \item 支援向量機（Support Vector Machine,SVM）\\
                 　　支援向量機（SVM）主要描述支援向量方法的分類\cite{ref30}。SVM模型的目標是找到一個最佳的超平面，使得資料點與超平面之間的邊界最大化，進而達到最佳分類效果\cite{ref31}。
-                \item 隨機森林樹（Random Forest, RF）\\
+                \item 隨機森林樹（Random Forest,RF）\\
                 　　隨機森林是一種結合多個樹狀預測器的機器學習模型，每個樹基於獨立抽樣的隨機向量生成，且森林中所有樹的隨機向量具有相同的分佈特性。隨著森林中樹的數量增加，其泛化誤差幾乎確定會收斂至一個有限值，這反映了隨機森林在統計上的穩定性\cite{ref32}。
-                \item 多元多項式迴歸（Multiple Polynomial Regression, MPR）\\
-                　　線性迴歸（Linear Regression, LR）在使用非完全線性分布的資料時可能無法進行分析。相比之下，多元多項式迴歸（Multiple Polynomial Regression, MPR）則適用分析在有多變數之間存在複雜關係的情況。以公式(2)為例，其表示一個二階多元多項式(Sinha, 2013)。\cite{ref33}。在此方程式中，$\beta_1$、$\beta_2$代表線性效應參數，$\beta_{11}$、$\beta_{22}$是二次效應參數，$\beta_{12}$是交互作用效應參數。       
+                \item 多元多項式迴歸（Multiple Polynomial Regression,MPR）\\
+                　　線性迴歸（Linear Regression,LR）在使用非完全線性分布的資料時可能無法進行分析。相比之下，多元多項式迴歸（Multiple Polynomial Regression,MPR）則適用分析在有多變數之間存在複雜關係的情況。以公式(2)為例，其表示一個二階多元多項式(Sinha,2013)。\cite{ref33}。在此方程式中，$\beta_1$、$\beta_2$代表線性效應參數，$\beta_{11}$、$\beta_{22}$是二次效應參數，$\beta_{12}$是交互作用效應參數。
                     \begin{equation}
                         y = \beta_0 + \beta_1 x_1 + \beta_2 x_2 + \beta_{11} x_1^2 + \beta_{22} x_2^2 + \beta_{12} x_1 x_2
-                    \end{equation} 
+                    \end{equation}
                 \item eXtreme Gradient Boosting（XGBoost）\\
                 　　XGBoost在資料科學領域中被廣泛使用，也在Kaggle許多機器學習及競賽中取得最佳結果，其特點為有非常強的擴展性（Scalibility）與性能，可以使用相對其他模型更少的系統資源，擴充數十億級別的資料\cite{ref9}
                 \item Light Gradient Boosting Machine（LightGBM）\\
-                　　LightGBM是一種高效能的梯度提升決策樹，在傳統Gradient Boosting Decision Tree（GBDT）演算法上加入使用Gradient-based One-Side Sampling（GOSS）和Exclusive Feature Bunding （EFB），並顯示出LightGBM相較傳統的GBDT加快了20倍以上的速度，同時也並未降低準確性\cite{ref10}。
+                　　LightGBM是一種高效能的梯度提升決策樹，在傳統Gradient Boosting Decision Tree（GBDT）演算法上加入使用Gradient-based One-Side Sampling（GOSS）和Exclusive Feature Bunding（EFB），並顯示出LightGBM相較傳統的GBDT加快了20倍以上的速度，同時也並未降低準確性\cite{ref10}。
             \end{enumerate}
         \item 超參數調整\\
         　　交叉驗證（Cross Validation）能夠用於超參數（Hyperparameter）調整，能夠防止過擬合的發生，並進行模型泛化的評估\cite{ref34}。而透過超參數調整，能針對各模型調整參數。
@@ -216,19 +214,19 @@
                     \begin{equation}
                     R^2 = 1 - \frac{\sum_{i=1}^n (X_i - Y_i)^2}{\sum_{i=1}^n (\overline{Y} - Y_i)^2}
                     \end{equation}
-                \item 均方根誤差（Root-Mean-Square Error, RMSE）\\
+                \item 均方根誤差（Root-Mean-Square Error,RMSE）\\
                 　　RMSE是衡量殘差值分散程度的指標，能夠評估資料點在最佳擬合線附近的集中程度，RMSE衡量預測值與實際值之間的平均差異，並評估MPR水質分析模型的精準度。較低的RMSE表示模型預測更準確。RMSE的公式如下所示。
                     \begin{equation}
                     RMSE = \sqrt{\frac{1}{n} \sum_{i=1}^n (X_i - Y_i)^2}
                     \end{equation}
-                \item 平均絕對誤差（Mean Absolute Error, MAE）\\
+                \item 平均絕對誤差（Mean Absolute Error,MAE）\\
                 　　MAE的計算為目標值與測量值之差的絕對值之和再取平均值，用於判斷MPR水質分析模型的準確性，MAE的數值越低模型所測量出的誤差越小，反之MAE的數值越高測量出的誤差越大，MAE公式如下所示。
                     \begin{equation}
                     MAE = \frac{1}{n} \sum_{i=1}^n |X_i - Y_i| = \frac{1}{n} \sum_{i=1}^n e_i
                     \end{equation}
             \end{enumerate}
         \item 實現系統化\\
-        　　完成模型建構後，本研究應用訓練完成的模型進行水質資料分析。並進一步系統化機器學習模型，進行以下幾項工作：(A)序列化模型、(B)架設應用程式介面（API）、(C)將模型雲端部署至雲端運算平台及(D)完成前端（Front-End）行動裝置應用程式（Mobile Application, APP）的開發。這些步驟旨在實現具機器學習功能之智慧化水質分析與評估系統、多元多項式迴歸模型及前後端程式開發，使其成為一套完整的智慧化水質分析與評估系統。最終成果將包括能夠對水質狀態進行綜合評分，並針對各項水質問題提供改善建議。透過機器學習技術進行水質分析並提供實用建議，使本研究成為解決水質資料分析問題的智慧化解決方案。
+        　　完成模型建構後，本研究應用訓練完成的模型進行水質資料分析。並進一步系統化機器學習模型，進行以下幾項工作：(A)序列化模型、(B)架設應用程式介面（API）、(C)將模型雲端部署至雲端運算平台及(D)完成前端（Front-End）行動裝置應用程式（Mobile Application,APP）的開發。這些步驟旨在實現具機器學習功能之智慧化水質分析與評估系統、多元多項式迴歸模型及前後端程式開發，使其成為一套完整的智慧化水質分析與評估系統。最終成果將包括能夠對水質狀態進行綜合評分，並針對各項水質問題提供改善建議。透過機器學習技術進行水質分析並提供實用建議，使本研究成為解決水質資料分析問題的智慧化解決方案。
             \begin{enumerate}[label=\Alph*.]
                 \item 模型序列化\\
                 　　模型序列化（Serialization）是模型部署前的第一步，本研究能夠使用Joblib將建立好的模型序列化，能夠避免每次使用皆重新訓練的需求。序列化後的模型能夠直接部署於雲端運算平台中，供應用程式介面（API）呼叫使用。
@@ -237,7 +235,7 @@
                 \item 雲端部署\\
                 　　本研究使用Google Cloud Platform（GCP）基礎架構即服務（IaaS）位於臺灣彰化縣的asia-east1-b之e2-small等級雲端平臺進行機器學習模型部署，如此可以為所完成的多元多項式迴歸（MPR）水質分析模型設定遠端應用程式介面（API）伺服器，以提供物聯網裝置呼叫MPR模型進行分析運算。
                 \item 前端行動裝置應用程式開發\\
-                　　在本研究中，使用JavaScript語言和React Native進行前端（Front-End）行動裝置應用程式（Mobile Application, APP）的開發，目的是實現具機器學習功能的智慧化水質分析與評估系統、以及多元多項式迴歸模型的前端部分，如圖9所示。React Native的使用使本研究無需借助Android專用的Android Studio或蘋果公司的Xcode等編輯環境。相反，採用Expo和Visual Studio Code作為前端應用程式的整合開發環境，這樣可以在開發過程中使用Expo Go在Android和iOS裝置上即時預覽應用程式的效果。\\
+                　　在本研究中，使用JavaScript語言和React Native進行前端（Front-End）行動裝置應用程式（Mobile Application,APP）的開發，目的是實現具機器學習功能的智慧化水質分析與評估系統、以及多元多項式迴歸模型的前端部分，如圖9所示。React Native的使用使本研究無需借助Android專用的Android Studio或蘋果公司的Xcode等編輯環境。相反，採用Expo和Visual Studio Code作為前端應用程式的整合開發環境，這樣可以在開發過程中使用Expo Go在Android和iOS裝置上即時預覽應用程式的效果。\\
                 　　在開發過程中，本研究主要透過FETCH呼叫後端（Back-End）上的MPR模型程式，將使用者的水質資料POST至API伺服器，並接收回傳結果以顯示報表資訊，從而為使用者提供改善水質的建議。
             \end{enumerate}
     \end{enumerate}
@@ -250,7 +248,7 @@
 \item 執行進度\\
 　　本研究自2024年7月1日起開始執行，以甘特圖（Gantt Chart）進行嚴謹的規劃和執行，於2025年2月28日結案，共計執行約8個月。在8個月內完成了實作目標與相關內容，包括水質資料分析模型的比較、選擇與建構，以及智慧化水質分析與評估系統的開發與部署。研究主軸為找出最適合進行水質資料分析的模型並實際應用。各項步驟方向確認至最終完成如下表所示。
 \item 遭遇之困難與解決途徑\\
-　　[內容 TODO]
+　　[內容TODO]
 \end{enumerate}
 
 \item[(三)] 完成之工作項目及成果。
@@ -263,7 +261,7 @@
         \item AI水質分析機器學習模型比較\\
         　　為能有效進行水質資料的分析與評估，研究重點為設計一個能達成計畫目標之機器學習模型。模型選擇如「(二)研究步驟」中「(2-2-3)模型選擇與比較」之內容所述。評估以線性迴歸（LR）、支援向量機（SVM）、隨機森林樹（RF）、多元多項式迴歸（MPR）、XGBoost及LightGBM進行比較，並選擇最適合進行水質資料分析的模型。最終成果將以模型的決定係數（R²）、均方根誤差（RMSE）及平均絕對誤差（MAE）等指標進行評估，並選擇最適合進行水質資料分析的模型。\\
         　　模型開發亦如「(二)研究步驟」之內容所述，以前期「運用智慧型綠能永續景觀噴泉促進環境保育效益之研究」計畫所蒐集之水質資料結合中華民國環境部全國環境水質監測資訊網的公開資料，共計87,005筆水質資料進行運用。並將開發之機器學習模型將部署於雲端平臺，提供大量水質資料處理所需的運算能力。\\
-        　　為能有效評估水質資料，本研究使用水體品質指標（Water Quality Index, WQI$_5$）WQI能夠將大量水質資料轉換如等級一樣的數值，比起各種參數的一長算數值更容易理解與運用，使人們更容易理解水質資料呈現的結果\cite{ref35}。WQI的公式如公式(6)所示，同時，本研究在訓練過程中依照WQI$_5$版本為各項水質資料項目加上權重如表2所示，再依分析結果依表3進行評級，使分析結果具有客觀的可信度。\\
+        　　為能有效評估水質資料，本研究使用水體品質指標（Water Quality Index,WQI$_5$）WQI能夠將大量水質資料轉換如等級一樣的數值，比起各種參數的一長算數值更容易理解與運用，使人們更容易理解水質資料呈現的結果\cite{ref35}。WQI的公式如公式(6)所示，同時，本研究在訓練過程中依照WQI$_5$版本為各項水質資料項目加上權重如表2所示，再依分析結果依表3進行評級，使分析結果具有客觀的可信度。\\
         \begin{equation}
             WQI_5 = \frac{\sum_{i=1}^5 (W_i Q_i)^{1.5}}{10}
         \end{equation}
@@ -274,7 +272,7 @@
                     \caption{WQI$_5$水質參數項目與權重}
                     \begin{tabular}{cc}
                     \hline
-                    WQI$_5$ 水質參數項目 & 權重 \\
+                    WQI$_5$水質參數項目 & 權重 \\
                     \hline
                     溶氧（DO） & 0.31 \\
                     生化需氧量（BOD5） & 0.26 \\
@@ -313,50 +311,50 @@
                         \begin{minipage}{0.45\textwidth}
                             \centering
                             \includegraphics[width=\textwidth]{resources/image/ResidualPlot/XGBoost.png}
-                            \caption{XGBoost 殘差圖}
+                            \caption{XGBoost殘差圖}
                             \label{fig:residual_xgboost}
                         \end{minipage}
                         \begin{minipage}{0.45\textwidth}
                             \centering
                             \includegraphics[width=\textwidth]{resources/image/ResidualPlot/LightGBM.png}
-                            \caption{LightGBM 殘差圖}
+                            \caption{LightGBM殘差圖}
                             \label{fig:residual_lightgbm}
                         \end{minipage}
                         \begin{minipage}{0.45\textwidth}
                             \centering
                             \includegraphics[width=\textwidth]{resources/image/ResidualPlot/RF.png}
-                            \caption{RF 殘差圖}
+                            \caption{RF殘差圖}
                             \label{fig:residual_rf}
                         \end{minipage}
                         \begin{minipage}{0.45\textwidth}
                             \centering
                             \includegraphics[width=\textwidth]{resources/image/ResidualPlot/SVM.png}
-                            \caption{SVM 殘差圖}
+                            \caption{SVM殘差圖}
                             \label{fig:residual_svm}
                         \end{minipage}
                         \begin{minipage}{0.45\textwidth}
                             \centering
                             \includegraphics[width=\textwidth]{resources/image/ResidualPlot/MPR.png}
-                            \caption{MPR 殘差圖}
+                            \caption{MPR殘差圖}
                             \label{fig:residual_mpr}
                         \end{minipage}
                         \begin{minipage}{0.45\textwidth}
                             \centering
                             \includegraphics[width=\textwidth]{resources/image/ResidualPlot/LR.png}
-                            \caption{LR 殘差圖}
+                            \caption{LR殘差圖}
                             \label{fig:residual_lr}
                         \end{minipage}
                     \end{figure}
                 \item AI水質分析機器學習模型指標\\
-                　　在本研究中，我們對多種機器學習模型進行了訓練與評估，包括XGBoost、LightGBM、隨機森林（RF）、支持向量機（SVM）、多元多項式迴歸（MPR）及線性迴歸（LR），以探討其在水質分析中的表現。為全面評估各模型在不同資料量下的相對優劣，我們使用了多種訓練集大小進行實驗：100 筆、1000 筆、5000 筆、10000 筆、20000 筆及 50000 筆資料，並最終在剩餘的 10714 筆資料上進行測試。評估指標包括決定係數（\( R^2 \)）、均方根誤差（RMSE）及平均絕對誤差（MAE），並對訓練集與測試集的結果進行了分析。以下將分段呈現各模型在不同資料量下的表現，並在最後總結出相對而言最適合水質資料分析的模型。\\
-                　　在小資料量（100 筆樣本）下，各模型的表現如表 \ref{table:small_data} 所示。相較之下，樹模型（XGBoost、LightGBM、RF）的表現顯著優於其他模型，其中隨機森林（RF）在測試集上的 \( R^2 \) 達到 0.9377，MAE 為 3.0579，RMSE 為 4.2815，顯示出最佳的預測能力。XGBoost 和 LightGBM 的測試集 \( R^2 \) 分別為 0.9328 和 0.9223，誤差指標略高於 RF，但仍明顯優於非樹模型。相比之下，支持向量機（SVM）、多元多項式迴歸（MPR）和線性迴歸（LR）的表現較差，尤其是 MPR 的測試集 \( R^2 \) 為 -164.1864，MAE 為 8.6939，RMSE 為 19.0324，顯示其完全不適合小規模水質資料分析。LR 的測試集 \( R^2 \) 為 0.6704，雖優於 MPR 和 SVM，但與樹模型相比仍有較大差距。\\
+                　　在本研究中，我們對多種機器學習模型進行了訓練與評估，包括XGBoost、LightGBM、隨機森林（RF）、支持向量機（SVM）、多元多項式迴歸（MPR）及線性迴歸（LR），以探討其在水質分析中的表現。為全面評估各模型在不同資料量下的相對優劣，我們使用了多種訓練集大小進行實驗：100筆、1000筆、5000筆、10000筆、20000筆及50000筆資料，並最終在剩餘的10714筆資料上進行測試。評估指標包括決定係數（\( R^2 \)）、均方根誤差（RMSE）及平均絕對誤差（MAE），並對訓練集與測試集的結果進行了分析。以下將分段呈現各模型在不同資料量下的表現，並在最後總結出相對而言最適合水質資料分析的模型。\\
+                　　在小資料量（100筆樣本）下，各模型的表現如表 \ref{table:small_data} 所示。相較之下，樹模型（XGBoost、LightGBM、RF）的表現顯著優於其他模型，其中隨機森林（RF）在測試集上的 \( R^2 \) 達到0.9377，MAE為3.0579，RMSE為4.2815，顯示出最佳的預測能力。XGBoost和LightGBM的測試集 \( R^2 \) 分別為0.9328和0.9223，誤差指標略高於RF，但仍明顯優於非樹模型。相比之下，支持向量機（SVM）、多元多項式迴歸（MPR）和線性迴歸（LR）的表現較差，尤其是MPR的測試集 \( R^2 \) 為-164.1864，MAE為8.6939，RMSE為19.0324，顯示其完全不適合小規模水質資料分析。LR的測試集 \( R^2 \) 為0.6704，雖優於MPR和SVM，但與樹模型相比仍有較大差距。\\
                     \begin{table}[H]
                         \centering
-                        \caption{小資料量（100 筆樣本）下各模型的表現}
+                        \caption{小資料量（100筆樣本）下各模型的表現}
                         \label{table:small_data}
                         \begin{tabular}{|c|c|c|c|c|c|c|}
                             \hline
-                            模型 & 訓練集 \( R^2 \) & 測試集 \( R^2 \) & 訓練集 MAE & 測試集 MAE & 訓練集 RMSE & 測試集 RMSE \\
+                            模型 & 訓練集 \( R^2 \) & 測試集 \( R^2 \) & 訓練集MAE & 測試集MAE & 訓練集RMSE & 測試集RMSE \\
                             \hline
                             XGBoost & 1.0000 & 0.9328 & 0.0005 & 3.1106 & 0.0007 & 4.4192 \\
                             LightGBM & 0.9809 & 0.9223 & 1.5883 & 3.4851 & 2.3875 & 4.7502 \\
@@ -367,14 +365,14 @@
                             \hline
                         \end{tabular}
                     \end{table}
-                　　當資料量增加至 1000 筆（中資料量）時，各模型的表現如表 \ref{table:medium_data_1000} 所示。相對而言，XGBoost 的測試集 \( R^2 \) 達到 0.9883，MAE 為 1.3775，RMSE 為 2.0547，略優於 LightGBM（測試集 \( R^2 = 0.9917 \)，MAE = 1.0994，RMSE = 1.7218）和 RF（測試集 \( R^2 = 0.9862 \)，MAE = 1.5021，RMSE = 2.2285）。與此相比，SVM 的測試集 \( R^2 \) 提升至 0.8789，但誤差指標（MAE = 4.7232，RMSE = 6.6197）仍高於樹模型。MPR 和 LR 的測試集 \( R^2 \) 分別為 -14.1201 和 0.7580，誤差指標較高（MAE 分別為 7.0965 和 7.0607，RMSE 分別為 18.4625 和 9.3533），顯示其在中等資料量下仍無法有效擬合水質資料的複雜關係。\\
+                　　當資料量增加至1000筆（中資料量）時，各模型的表現如表 \ref{table:medium_data_1000} 所示。相對而言，XGBoost的測試集 \( R^2 \) 達到0.9883，MAE為1.3775，RMSE為2.0547，略優於LightGBM（測試集 \( R^2 =0.9917 \)，MAE=1.0994，RMSE=1.7218）和RF（測試集 \( R^2 =0.9862 \)，MAE=1.5021，RMSE=2.2285）。與此相比，SVM的測試集 \( R^2 \) 提升至0.8789，但誤差指標（MAE=4.7232，RMSE=6.6197）仍高於樹模型。MPR和LR的測試集 \( R^2 \) 分別為-14.1201和0.7580，誤差指標較高（MAE分別為7.0965和7.0607，RMSE分別為18.4625和9.3533），顯示其在中等資料量下仍無法有效擬合水質資料的複雜關係。\\
                     \begin{table}[H]
                         \centering
-                        \caption{中資料量（1000 筆樣本）下各模型的表現}
+                        \caption{中資料量（1000筆樣本）下各模型的表現}
                         \label{table:medium_data_1000}
                         \begin{tabular}{|c|c|c|c|c|c|c|}
                             \hline
-                            模型 & 訓練集 \( R^2 \) & 測試集 \( R^2 \) & 訓練集 MAE & 測試集 MAE & 訓練集 RMSE & 測試集 RMSE \\
+                            模型 & 訓練集 \( R^2 \) & 測試集 \( R^2 \) & 訓練集MAE & 測試集MAE & 訓練集RMSE & 測試集RMSE \\
                             \hline
                             XGBoost & 1.0000 & 0.9883 & 0.0170 & 1.3775 & 0.0243 & 2.0547 \\
                             LightGBM & 0.9991 & 0.9917 & 0.3333 & 1.0994 & 0.5557 & 1.7218 \\
@@ -385,14 +383,14 @@
                             \hline
                         \end{tabular}
                     \end{table}
-                　　在訓練資料量為 5000 筆時，各模型的表現如表 \ref{table:medium_data_5000} 所示。LightGBM 的測試集 \( R^2 \) 達到 0.9974，MAE 為 0.6258，RMSE 為 0.9886，優於 XGBoost（測試集 \( R^2 = 0.9963 \)，MAE = 0.7599，RMSE = 1.1921）和 RF（測試集 \( R^2 = 0.9944 \)，MAE = 0.9241，RMSE = 1.4664）。SVM 的測試集 \( R^2 \) 為 0.9424，MAE 為 3.2896，RMSE 為 4.6757；MPR 和 LR 的測試集 \( R^2 \) 分別為 0.8218 和 0.7806，誤差指標較高（MAE 分別為 6.5485 和 7.1890，RMSE 分別為 8.2400 和 9.2001）。\\
+                　　在訓練資料量為5000筆時，各模型的表現如表 \ref{table:medium_data_5000} 所示。LightGBM的測試集 \( R^2 \) 達到0.9974，MAE為0.6258，RMSE為0.9886，優於XGBoost（測試集 \( R^2 =0.9963 \)，MAE=0.7599，RMSE=1.1921）和RF（測試集 \( R^2 =0.9944 \)，MAE=0.9241，RMSE=1.4664）。SVM的測試集 \( R^2 \) 為0.9424，MAE為3.2896，RMSE為4.6757；MPR和LR的測試集 \( R^2 \) 分別為0.8218和0.7806，誤差指標較高（MAE分別為6.5485和7.1890，RMSE分別為8.2400和9.2001）。\\
                         \begin{table}[H]
                             \centering
-                            \caption{中資料量（5000 筆樣本）下各模型的表現}
+                            \caption{中資料量（5000筆樣本）下各模型的表現}
                             \label{table:medium_data_5000}
                             \begin{tabular}{|c|c|c|c|c|c|c|}
                                 \hline
-                                模型 & 訓練集 \( R^2 \) & 測試集 \( R^2 \) & 訓練集 MAE & 測試集 MAE & 訓練集 RMSE & 測試集 RMSE \\
+                                模型 & 訓練集 \( R^2 \) & 測試集 \( R^2 \) & 訓練集MAE & 測試集MAE & 訓練集RMSE & 測試集RMSE \\
                                 \hline
                                 XGBoost & 0.9999 & 0.9963 & 0.1558 & 0.7599 & 0.2193 & 1.1921 \\
                                 LightGBM & 0.9994 & 0.9974 & 0.3459 & 0.6258 & 0.4934 & 0.9886 \\
@@ -403,15 +401,15 @@
                                 \hline
                             \end{tabular}
                         \end{table}
-                    　　在 10000 筆資料下，各模型的表現如表 \ref{table:medium_data_10000} 所示。LightGBM 的測試集 \( R^2 \) 為 0.9985，MAE 為 0.4873，RMSE 為 0.7748，略優於 XGBoost（\( R^2 = 0.9978 \)，MAE = 0.5927，RMSE = 0.9371）和 RF（\( R^2 = 0.9965 \)，MAE = 0.7070，RMSE = 1.1795）。SVM 的測試集 \( R^2 \) 為 0.9585，MAE 為 2.8561，RMSE 為 4.0287；MPR 和 LR 的測試集 \( R^2 \) 分別為 0.8225 和 0.7747，MAE 分別為 6.6178 和 7.2827，RMSE 分別為 8.3381 和 9.3961。\\
+                    　　在10000筆資料下，各模型的表現如表 \ref{table:medium_data_10000} 所示。LightGBM的測試集 \( R^2 \) 為0.9985，MAE為0.4873，RMSE為0.7748，略優於XGBoost（\( R^2 =0.9978 \)，MAE=0.5927，RMSE=0.9371）和RF（\( R^2 =0.9965 \)，MAE=0.7070，RMSE=1.1795）。SVM的測試集 \( R^2 \) 為0.9585，MAE為2.8561，RMSE為4.0287；MPR和LR的測試集 \( R^2 \) 分別為0.8225和0.7747，MAE分別為6.6178和7.2827，RMSE分別為8.3381和9.3961。\\
 
                         \begin{table}[H]
                             \centering
-                            \caption{中資料量（10000 筆樣本）下各模型的表現}
+                            \caption{中資料量（10000筆樣本）下各模型的表現}
                             \label{table:medium_data_10000}
                             \begin{tabular}{|c|c|c|c|c|c|c|}
                                 \hline
-                                模型 & 訓練集 \( R^2 \) & 測試集 \( R^2 \) & 訓練集 MAE & 測試集 MAE & 訓練集 RMSE & 測試集 RMSE \\
+                                模型 & 訓練集 \( R^2 \) & 測試集 \( R^2 \) & 訓練集MAE & 測試集MAE & 訓練集RMSE & 測試集RMSE \\
                                 \hline
                                 XGBoost & 0.9997 & 0.9978 & 0.2462 & 0.5927 & 0.3527 & 0.9371 \\
                                 LightGBM & 0.9994 & 0.9985 & 0.3528 & 0.4873 & 0.5070 & 0.7748 \\
@@ -422,14 +420,14 @@
                                 \hline
                             \end{tabular}
                         \end{table}
-                    　　在 20000 筆資料下，各模型的表現如表 \ref{table:medium_data_20000} 所示。LightGBM 的測試集 \( R^2 \) 為 0.9989，MAE 為 0.4302，RMSE 為 0.6599，優於 XGBoost（\( R^2 = 0.9985 \)，MAE = 0.4856，RMSE = 0.7632）和 RF（\( R^2 = 0.9978 \)，MAE = 0.5321，RMSE = 0.9283）。SVM 的測試集 \( R^2 \) 為 0.9655，MAE 為 2.6660，RMSE 為 3.6989；MPR 和 LR 的測試集 \( R^2 \) 分別為 0.8267 和 0.7767，MAE 分別為 6.6856 和 7.3141，RMSE 分別為 8.3275 和 9.4486。\\
+                    　　在20000筆資料下，各模型的表現如表 \ref{table:medium_data_20000} 所示。LightGBM的測試集 \( R^2 \) 為0.9989，MAE為0.4302，RMSE為0.6599，優於XGBoost（\( R^2 =0.9985 \)，MAE=0.4856，RMSE=0.7632）和RF（\( R^2 =0.9978 \)，MAE=0.5321，RMSE=0.9283）。SVM的測試集 \( R^2 \) 為0.9655，MAE為2.6660，RMSE為3.6989；MPR和LR的測試集 \( R^2 \) 分別為0.8267和0.7767，MAE分別為6.6856和7.3141，RMSE分別為8.3275和9.4486。\\
                         \begin{table}[H]
                             \centering
-                            \caption{中資料量（20000 筆樣本）下各模型的表現}
+                            \caption{中資料量（20000筆樣本）下各模型的表現}
                             \label{table:medium_data_20000}
                             \begin{tabular}{|c|c|c|c|c|c|c|}
                                 \hline
-                                模型 & 訓練集 \( R^2 \) & 測試集 \( R^2 \) & 訓練集 MAE & 測試集 MAE & 訓練集 RMSE & 測試集 RMSE \\
+                                模型 & 訓練集 \( R^2 \) & 測試集 \( R^2 \) & 訓練集MAE & 測試集MAE & 訓練集RMSE & 測試集RMSE \\
                                 \hline
                                 XGBoost & 0.9995 & 0.9985 & 0.3001 & 0.4856 & 0.4408 & 0.7632 \\
                                 LightGBM & 0.9993 & 0.9989 & 0.3538 & 0.4302 & 0.5124 & 0.6599 \\
@@ -440,14 +438,14 @@
                                 \hline
                             \end{tabular}
                         \end{table}
-                    　　在大資料量（50000 筆樣本）下，各模型的表現如表 \ref{table:large_data_50000} 所示。LightGBM 的測試集 \( R^2 \) 達到 0.9991，MAE 為 0.4009，RMSE 為 0.6174，略優於 XGBoost（測試集 \( R^2 = 0.9990 \)，MAE = 0.4173，RMSE = 0.6492）和 RF（測試集 \( R^2 = 0.9987 \)，MAE = 0.4044，RMSE = 0.7367）。SVM 的測試集 \( R^2 \) 為 0.9660，MAE 為 2.7122，RMSE 為 3.7104；MPR 和 LR 的測試集 \( R^2 \) 僅分別為 0.7943 和 0.7519，誤差指標高達 MAE = 7.3408 和 7.8900，RMSE = 9.1307 和 10.0296，顯示其在大資料量下相對不具競爭力。\\
+                    　　在大資料量（50000筆樣本）下，各模型的表現如表 \ref{table:large_data_50000} 所示。LightGBM的測試集 \( R^2 \) 達到0.9991，MAE為0.4009，RMSE為0.6174，略優於XGBoost（測試集 \( R^2 =0.9990 \)，MAE=0.4173，RMSE=0.6492）和RF（測試集 \( R^2 =0.9987 \)，MAE=0.4044，RMSE=0.7367）。SVM的測試集 \( R^2 \) 為0.9660，MAE為2.7122，RMSE為3.7104；MPR和LR的測試集 \( R^2 \) 僅分別為0.7943和0.7519，誤差指標高達MAE=7.3408和7.8900，RMSE=9.1307和10.0296，顯示其在大資料量下相對不具競爭力。\\
                         \begin{table}[H]
                             \centering
-                            \caption{大資料量（50000 筆樣本）下各模型的表現}
+                            \caption{大資料量（50000筆樣本）下各模型的表現}
                             \label{table:large_data_50000}
                             \begin{tabular}{|c|c|c|c|c|}
                                 \hline
-                                模型 & 訓練集 \( R^2 \) & 測試集 \( R^2 \) & 測試集 MAE & 測試集 RMSE \\
+                                模型 & 訓練集 \( R^2 \) & 測試集 \( R^2 \) & 測試集MAE & 測試集RMSE \\
                                 \hline
                                 XGBoost & 0.9994 & 0.9990 & 0.4173 & 0.6492 \\
                                 LightGBM & 0.9993 & 0.9991 & 0.4009 & 0.6174 \\
@@ -458,10 +456,10 @@
                                 \hline
                             \end{tabular}
                         \end{table}
-                        　　在 10714 筆驗證資料上，各模型的具體表現如表 \ref{table:validation_data} 所示。LightGBM 的 \( R^2 \) 達到 0.9983，MAE 為 0.3836，RMSE 為 0.6152，優於 XGBoost（\( R^2 = 0.9982 \)，MAE = 0.3940，RMSE = 0.6387）和 RF（\( R^2 = 0.9976 \)，MAE = 0.4160，RMSE = 0.7462）。SVM 的 \( R^2 \) 為 0.9273，誤差指標顯著高於樹模型（MAE = 3.0782，RMSE = 4.0677）。MPR 和 LR 的表現最差，\( R^2 \) 分別為 0.7369 和 0.7169，MAE 和 RMSE 均遠高於其他模型。
+                        　　在10714筆驗證資料上，各模型的具體表現如表 \ref{table:validation_data} 所示。LightGBM的 \( R^2 \) 達到0.9983，MAE為0.3836，RMSE為0.6152，優於XGBoost（\( R^2 =0.9982 \)，MAE=0.3940，RMSE=0.6387）和RF（\( R^2 =0.9976 \)，MAE=0.4160，RMSE=0.7462）。SVM的 \( R^2 \) 為0.9273，誤差指標顯著高於樹模型（MAE=3.0782，RMSE=4.0677）。MPR和LR的表現最差，\( R^2 \) 分別為0.7369和0.7169，MAE和RMSE均遠高於其他模型。
                         \begin{table}[H]
                             \centering
-                            \caption{驗證集（10714 筆資料）下各模型的表現}
+                            \caption{驗證集（10714筆資料）下各模型的表現}
                             \label{table:validation_data}
                             \begin{tabular}{|c|c|c|c|}
                                 \hline
@@ -476,14 +474,14 @@
                                 \hline
                             \end{tabular}
                         \end{table}
-                        　　為簡潔呈現 10714 筆驗證資料的整體結果，我們計算了各模型的平均準確率、準確率標準差及總運算時間，如表 \ref{table:accuracy_data} 所示。LightGBM 的平均準確率最高，為 99.0868\%，標準差為 1.3615\%，顯示其預測精度高且穩定；總運算時間為 0.0943 秒，效率優異。XGBoost 的平均準確率為 99.0826\%，標準差為 1.3181\%，總運算時間僅 0.0100 秒，表現與 LightGBM 相近但速度更快。RF 的平均準確率為 98.9237\%，標準差為 1.9407\%，總運算時間為 0.1731 秒，略遜於前二者。SVM 的平均準確率為 92.9570\%，標準差高達 10.5956\%，總運算時間長達 41.8753 秒，顯示其穩定性和效率不足。MPR 和 LR 的平均準確率分別為 84.6088\% 和 84.5803\%，標準差分別為 16.0906\% 和 17.8491\%，總運算時間雖短（分別為 0.0599 秒和 0.0020 秒），但準確性與穩定性均不佳。
+                        　　為簡潔呈現10714筆驗證資料的整體結果，我們計算了各模型的平均準確率、準確率標準差及總運算時間，如表 \ref{table:accuracy_data} 所示。LightGBM的平均準確率最高，為99.0868\%，標準差為1.3615\%，顯示其預測精度高且穩定；總運算時間為0.0943秒，效率優異。XGBoost的平均準確率為99.0826\%，標準差為1.3181\%，總運算時間僅0.0100秒，表現與LightGBM相近但速度更快。RF的平均準確率為98.9237\%，標準差為1.9407\%，總運算時間為0.1731秒，略遜於前二者。SVM的平均準確率為92.9570\%，標準差高達10.5956\%，總運算時間長達41.8753秒，顯示其穩定性和效率不足。MPR和LR的平均準確率分別為84.6088\%和84.5803\%，標準差分別為16.0906\%和17.8491\%，總運算時間雖短（分別為0.0599秒和0.0020秒），但準確性與穩定性均不佳。
                         \begin{table}[H]
                             \centering
-                            \caption{驗證集（10714 筆資料）下各模型的準確率統計}
+                            \caption{驗證集（10714筆資料）下各模型的準確率統計}
                             \label{table:accuracy_data}
                             \begin{tabular}{|c|c|c|c|}
                                 \hline
-                                模型 & 平均準確率 (\%) & 準確率標準差 (\%) & 總運算時間 (秒) \\
+                                模型 & 平均準確率(\%) & 準確率標準差(\%) & 總運算時間(秒) \\
                                 \hline
                                 XGBoost & 99.0826 & 1.3181 & 0.0100 \\
                                 LightGBM & 99.0868 & 1.3615 & 0.0943 \\
@@ -494,26 +492,26 @@
                                 \hline
                             \end{tabular}
                         \end{table}
-                        　　綜合以上結果，樹模型（XGBoost、LightGBM、RF）在 10714 筆驗證資料上的表現顯著優於 SVM、MPR 和 LR。其中，LightGBM 以最高的平均準確率（99.0868\%）、較低的誤差指標（MAE = 0.3836，RMSE = 0.6152）及適中的運算時間（0.0943 秒）脫穎而出，顯示其在水質資料分析中具有最高的準確性和良好的效率，是最理想的選擇。XGBoost 作為次佳選擇，平均準確率（99.0826\%）與 LightGBM 接近，且運算速度最快（0.0100 秒），適合需要快速處理的情境。RF 雖然準確性稍低（98.9237\%），且運算時間較長（0.1731 秒），但仍優於非樹模型。SVM、MPR 和 LR 在準確性與穩定性上均不具競爭力，尤其 SVM 的運算時間過長（41.8753 秒），MPR 和 LR 的平均準確率低於 85\%，不適合水質資料分析。\\
-                        　　值得注意的是，在提案與研究前期所使用的MPR模型表現不如文獻預期，顯示其適用性受限於資料特性。因此，對於水質資料分析，LightGBM 是最佳模型，XGBoost 為次佳選擇，兩者在準確性、穩定性和效率上均能滿足需求。
+                        　　綜合以上結果，樹模型（XGBoost、LightGBM、RF）在10714筆驗證資料上的表現顯著優於SVM、MPR和LR。其中，LightGBM以最高的平均準確率（99.0868\%）、較低的誤差指標（MAE=0.3836，RMSE=0.6152）及適中的運算時間（0.0943秒）脫穎而出，顯示其在水質資料分析中具有最高的準確性和良好的效率，是最理想的選擇。XGBoost作為次佳選擇，平均準確率（99.0826\%）與LightGBM接近，且運算速度最快（0.0100秒），適合需要快速處理的情境。RF雖然準確性稍低（98.9237\%），且運算時間較長（0.1731秒），但仍優於非樹模型。SVM、MPR和LR在準確性與穩定性上均不具競爭力，尤其SVM的運算時間過長（41.8753秒），MPR和LR的平均準確率低於85\%，不適合水質資料分析。\\
+                        　　值得注意的是，在提案與研究前期所使用的MPR模型表現不如文獻預期，顯示其適用性受限於資料特性。因此，對於水質資料分析，LightGBM是最佳模型，XGBoost為次佳選擇，兩者在準確性、穩定性和效率上均能滿足需求。
             \end{enumerate}
         \item 智慧化水質分析與評估系統\\
     \end{enumerate}
 \item 學術研究、國家發展及其他應用方面預期之貢獻\\
 　　本計畫旨在提供一個快速且準確，基於機器學習的智慧化水質評估方案，期望開發成果能成為解決水質問題的實用工具。本計畫在研究上需要結合跨領域的專業知識與技術，因此相關成果將在整理分析後進行論文發表，預計能對資訊工程、人工智慧、水資源管理和環境生態保育等領域產生有意義的價值與貢獻。
     \begin{enumerate}[label=3-3-\arabic*.]
-        \item 參加 PyCon Taiwan 2024 臺灣 Python 年會 Poster Session
-        \item 參加 2024 國際民生電子研討會並獲得論文佳作獎
+        \item 參加PyCon Taiwan2024臺灣Python年會Poster Session
+        \item 參加2024國際民生電子研討會並獲得論文佳作獎
         \item 前期計畫相關研究成果發表期刊並接受
     \end{enumerate}
 \end{enumerate}
 
 \begin{thebibliography}{99}
 \bibitem{ref1} Shao, Z., Zhao, R., Yuan, S., Ding, M., \& Wang, Y. (2022). Tracing the evolution of AI in the past decade and forecasting the emerging trends. Expert Systems with Applications, 209, 118221.
-\bibitem{ref2} Cowls, J. (2021). ‘AI for Social Good’: Whose Good and Who’s Good? Introduction to the Special Issue on Artificial Intelligence for Social Good. Philosophy \& Technology, 34(Suppl 1), 1–5. 
+\bibitem{ref2} Cowls, J. (2021). ‘AI for Social Good’: Whose Good and Who’s Good? Introduction to the Special Issue on Artificial Intelligence for Social Good. Philosophy \& Technology, 34(Suppl 1), 1–5.
 \bibitem{ref3} Aggarwal, K., Mijwil, M. M., Al-Mistarehi, A. H., Alomari, S., Gök, M., Alaabdin, A. M. Z., \& Abdulrhman, S. H. (2022). Has the future started? The current growth of artificial intelligence, machine learning, and deep learning. Iraqi Journal for Computer Science and Mathematics, 3(1), 115-123.
-\bibitem{ref4} Zhou, Y., Wang, X., Li, W., Zhou, S., \& Jiang, L. (2023). Water Quality Evaluation and Pollution Source Apportionment of Surface Water in a Major City in Southeast China Using Multi-Statistical Analyses and Machine Learning Models. International Journal of Environmental Research and Public Health, 20(1). 
-\bibitem{ref5} Im, Y., Song, G., Lee, J., \& Cho, M. (2022). Deep Learning Methods for Predicting Tap-Water Quality Time Series in South Korea. Water (20734441), 14(22), 3766. 
+\bibitem{ref4} Zhou, Y., Wang, X., Li, W., Zhou, S., \& Jiang, L. (2023). Water Quality Evaluation and Pollution Source Apportionment of Surface Water in a Major City in Southeast China Using Multi-Statistical Analyses and Machine Learning Models. International Journal of Environmental Research and Public Health, 20(1).
+\bibitem{ref5} Im, Y., Song, G., Lee, J., \& Cho, M. (2022). Deep Learning Methods for Predicting Tap-Water Quality Time Series in South Korea. Water (20734441), 14(22), 3766.
 \bibitem{ref6} Imran, H., Al-Abdaly, N. M., Shamsa, M. H., Shatnawi, A., Ibrahim, M., \& Ostrowski, K. A. (2022). Development of prediction model to predict the compressive strength of eco-friendly concrete using multivariate polynomial regression combined with stepwise method. Materials, 15(1), 317.
 \bibitem{ref7} Narayan, V., \& Daniel, A. K. (2022). Energy Efficient Protocol for Lifetime Prediction of Wireless Sensor Network using Multivariate Polynomial Regression Model.
 \bibitem{ref8} Zeini, H. A., Lwti, N. K., Imran, H., Henedy, S. N., Bernardo, L. F. A., \& Al-Khafaji, Z. (2023). Prediction of the Bearing Capacity of Composite Grounds Made of Geogrid-Reinforced Sand over Encased Stone Columns Floating in Soft Soil Using a White-Box Machine Learning Model. Applied Sciences, 13(8), 5131.
@@ -545,7 +543,7 @@
 \bibitem{ref35} Abdul Hameed M Jawad, A., Bahram K, M., \& Abass J, K. (2010). Evaluating raw and treated water quality of Tigris River within Baghdad by index analysis. journal of water resource and protection, 2010.
 \end{thebibliography}
 
-\end{enumerate}	
+\end{enumerate}
 
 \label{LastPage}
 \end{document}
