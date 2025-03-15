@@ -48,6 +48,12 @@
 \renewcommand{\footrulewidth}{0pt}
 \setlength{\headwidth}{\textwidth}
 
+% 避免段落縮進影響 figure 環境
+\makeatletter
+\let\oldfigure\figure
+\def\figure{\@ifnextchar[{\oldfigure}{\oldfigure[\relax]\noindent}}
+\makeatother
+
 % \lfoot{表 CM03}
 \rfoot{共~~\pageref{LastPage}~~頁~~第{~~\thepage~~}頁}
 
@@ -109,14 +115,14 @@
 　　本研究開發之智慧化水質分析與評估系統採用前後端分離架構，透過應用程式介面（Application Programming Interface, API）進行資料傳遞與呼叫。後端（Back-end）水質資料分析模型以Python程式語言開發，運用NumPy、Pandas及Scikit-learn等工具進行水質資料的處理和分析。前端（Front-end）則以JavaScript語言的React Native框架開發行動裝置應用程式，實現跨系統平臺操作。此架構的水質資料分析模型開發可歸納為四個步驟：匯入資料、資料處理、特徵工程及模型訓練與評估。系統建置完成後，使用者在前端行動裝置應用程式中只需輸入欲分析的水質資料，即可經由已訓練完成的機器學習模型進行分析，再於使用者介面（UI）將產生一份分析報表，包括水質狀況的綜合評分以及狀態說明。\\
     \begin{figure}[H]
         \centering
-        \begin{minipage}[t]{0.4\textwidth}
+        \begin{minipage}{0.45\textwidth}
             \centering
             \includegraphics[width=\textwidth]{resources/image/開發架構圖.png}
             \caption{系統程式開發架構圖}
             \label{fig:development_architecture}
-        \end{minipage}
-        \hspace{0.01\textwidth}
-        \begin{minipage}[t]{0.4\textwidth}
+        \end{minipage}%
+        \hfill
+        \begin{minipage}{0.45\textwidth}
             \centering
             \includegraphics[width=\textwidth]{resources/image/部署圖.jpg}
             \caption{系統部署圖}
@@ -193,7 +199,8 @@
                 \item 多元多項式迴歸（Multiple Polynomial Regression, MPR）\\
                 　　線性迴歸（Linear Regression, LR）在使用非完全線性分布的資料時可能無法進行分析。相比之下，多元多項式迴歸（Multiple Polynomial Regression, MPR）則適用分析在有多變數之間存在複雜關係的情況。以公式(2)為例，其表示一個二階多元多項式(Sinha, 2013)。\cite{ref33}。在此方程式中，$\beta_1$、$\beta_2$代表線性效應參數，$\beta_{11}$、$\beta_{22}$是二次效應參數，$\beta_{12}$是交互作用效應參數。       
                     \begin{equation}
-                        y = \beta_0 + \beta_1 x_1 + \beta_2 x_2 + \beta_{11} x_1^2 + \beta_{22} x_2^2 + \beta_{12} x_1 x_2       \end{equation} 
+                        y = \beta_0 + \beta_1 x_1 + \beta_2 x_2 + \beta_{11} x_1^2 + \beta_{22} x_2^2 + \beta_{12} x_1 x_2
+                    \end{equation} 
                 \item eXtreme Gradient Boosting（XGBoost）\\
                 　　XGBoost在資料科學領域中被廣泛使用，也在Kaggle許多機器學習及競賽中取得最佳結果，其特點為有非常強的擴展性（Scalibility）與性能，可以使用相對其他模型更少的系統資源，擴充數十億級別的資料\cite{ref9}
                 \item Light Gradient Boosting Machine（LightGBM）\\
@@ -221,7 +228,7 @@
                     \end{equation}
             \end{enumerate}
         \item 實現系統化\\
-        　　完成模型建構後，本研究應用訓練完成的模型進行水質資料分析。並進一步系統化機器學習模型，進行以下幾項工作：(A)序列化模型、(B)架設應用程式介面（API）、(C)將模型雲端部署至雲端運算平台及(C)完成前端（Front-End）行動裝置應用程式（Moblie Application, APP）的開發。這些步驟旨在實現具機器學習功能之智慧化水質分析與評估系統、多元多項式迴歸模型及前後端程式開發，使其成為一套完整的智慧化水質分析與評估系統。最終成果將包括能夠對水質狀態進行綜合評分，並針對各項水質問題提供改善建議。透過機器學習技術進行水質分析並提供實用建議，使本研究成為解決水質資料分析問題的智慧化解決方案。
+        　　完成模型建構後，本研究應用訓練完成的模型進行水質資料分析。並進一步系統化機器學習模型，進行以下幾項工作：(A)序列化模型、(B)架設應用程式介面（API）、(C)將模型雲端部署至雲端運算平台及(D)完成前端（Front-End）行動裝置應用程式（Mobile Application, APP）的開發。這些步驟旨在實現具機器學習功能之智慧化水質分析與評估系統、多元多項式迴歸模型及前後端程式開發，使其成為一套完整的智慧化水質分析與評估系統。最終成果將包括能夠對水質狀態進行綜合評分，並針對各項水質問題提供改善建議。透過機器學習技術進行水質分析並提供實用建議，使本研究成為解決水質資料分析問題的智慧化解決方案。
             \begin{enumerate}[label=\Alph*.]
                 \item 模型序列化\\
                 　　模型序列化（Serialization）是模型部署前的第一步，本研究能夠使用Joblib將建立好的模型序列化，能夠避免每次使用皆重新訓練的需求。序列化後的模型能夠直接部署於雲端運算平台中，供應用程式介面（API）呼叫使用。
@@ -262,90 +269,95 @@
         \end{equation}
             \begin{table}[H]
                 \centering
-                    \begin{minipage}[t]{0.45\textwidth}
-                        \centering
-                        \caption{WQI$_5$水質參數項目與權重}
-                            \begin{tabular}{cc}
-                            \hline
-                            WQI$_5$ 水質參數項目 & 權重 \\
-                            \hline
-                            溶氧（DO） & 0.31 \\
-                            生化需氧量（BOD5） & 0.26 \\
-                            氨氮（NH3-N） & 0.19 \\
-                            懸浮固體（SS） & 0.17 \\
-                            電導率（EC） & 0.07 \\
-                            \hline
-                        \end{tabular}
-                        \label{table:wqi_weights}
-                    \end{minipage}
-                    \begin{minipage}[t]{0.45\textwidth}
-                        \centering
-                        \caption{WQI$_5$水質指數範圍與評級}
-                        \begin{tabular}{cc}
-                        \hline
-                        指數範圍 & 評級 \\
-                        \hline
-                        WQI$_5>100$ & N/A \\
-                        $85<$WQI$_5\leq100$ & 優良 \\
-                        $70<$WQI$_5\leq85$ & 良好 \\
-                        $50<$WQI$_5\leq70$ & 中等 \\
-                        $30<$WQI$_5\leq50$ & 不良 \\
-                        $15<$WQI$_5\leq30$ & 糟糕 \\
-                        $0<$WQI$_5\leq15$ & 惡劣 \\
-                        \hline
+                \begin{minipage}{0.45\textwidth}
+                    \centering
+                    \caption{WQI$_5$水質參數項目與權重}
+                    \begin{tabular}{cc}
+                    \hline
+                    WQI$_5$ 水質參數項目 & 權重 \\
+                    \hline
+                    溶氧（DO） & 0.31 \\
+                    生化需氧量（BOD5） & 0.26 \\
+                    氨氮（NH3-N） & 0.19 \\
+                    懸浮固體（SS） & 0.17 \\
+                    電導率（EC） & 0.07 \\
+                    \hline
+                    \end{tabular}
+                    \label{table:wqi_weights}
+                \end{minipage}%
+                \hfill
+                \begin{minipage}{0.45\textwidth}
+                    \centering
+                    \caption{WQI$_5$水質指數範圍與評級}
+                    \begin{tabular}{cc}
+                    \hline
+                    指數範圍 & 評級 \\
+                    \hline
+                    WQI$_5>100$ & N/A \\
+                    $85<$WQI$_5\leq100$ & 優良 \\
+                    $70<$WQI$_5\leq85$ & 良好 \\
+                    $50<$WQI$_5\leq70$ & 中等 \\
+                    $30<$WQI$_5\leq50$ & 不良 \\
+                    $15<$WQI$_5\leq30$ & 糟糕 \\
+                    $0<$WQI$_5\leq15$ & 惡劣 \\
+                    \hline
                     \end{tabular}
                     \label{table:wqi_grades}
-                    \end{minipage}
+                \end{minipage}
             \end{table}
             \begin{enumerate}[label=\Alph*.]
                 \item AI水質分析機器學習模型殘差\\
                 　　從各模型殘差分布中，可以明顯看出XGBoost模型在擬合度上的優勢。如圖所示，XGBoost模型的殘差分布相對均勻，峰值皆在0附近。曲線斜率平緩，說明XGBoost模型的預測值與實際值之間的差異相對較小，具有較好的擬合度。相比之下，LightGBM模型的殘差分布雖也接近0，但曲線略微陡峭，顯示其在某些情況下預測誤差稍大。RF模型的殘差分布峰值同樣在0附近，但曲線較為分散，顯示其預測穩定性略遜於XGBoost。SVM模型的殘差分布則呈現較大的波動，峰值偏離0較遠，顯示其擬合能力相對較差。MPR和RL模型的殘差分布更為分散，曲線斜率陡峭，顯示其預測誤差較大，擬合度不佳。\\
                 　　綜合以上，XGBoost模型的擬合度更佳於其他模型，能更好地捕捉水質資料中的非線性關係，從而進行更準確的分析。在本研究開發的智慧化水質分析與評估系統的實際應用中，XGBoost模型具有捕捉水質資料中非線性關係、擬合度較好以及準確性高的優點，因此在解決非線性迴歸問題、分析具有非線性關係的資料及建立更複雜的模型以進行描述方面，具有更廣泛的應用。由此可見就殘差分布而言，選擇XGBoost模型在應對如水質資料等具有非線性關係的資料時，相較於其餘模型而言，是更為理想的選擇。
-                     \begin{figure}[H]
+                    \begin{figure}[H]
                         \centering
-                        \begin{minipage}[t]{0.4\textwidth}
+                        \begin{minipage}{0.45\textwidth}
                             \centering
                             \includegraphics[width=\textwidth]{resources/image/ResidualPlot/XGBoost.png}
                             \caption{XGBoost 殘差圖}
                             \label{fig:residual_xgboost}
-                        \end{minipage}
-                        \hspace{0.001\textwidth}
-                        \begin{minipage}[t]{0.4\textwidth}
+                        \end{minipage}%
+                        \hfill
+                        \begin{minipage}{0.45\textwidth}
                             \centering
                             \includegraphics[width=\textwidth]{resources/image/ResidualPlot/LightGBM.png}
                             \caption{LightGBM 殘差圖}
                             \label{fig:residual_lightgbm}
                         \end{minipage}
-                        \vspace{0.001\textwidth}
-                        \begin{minipage}[t]{0.4\textwidth}
+
+                        \vspace{0.5cm}
+
+                        \begin{minipage}{0.45\textwidth}
                             \centering
                             \includegraphics[width=\textwidth]{resources/image/ResidualPlot/RF.png}
                             \caption{RF 殘差圖}
                             \label{fig:residual_rf}
-                        \end{minipage}
-                        \hspace{0.001\textwidth}
-                        \begin{minipage}[t]{0.4\textwidth}
+                        \end{minipage}%
+                        \hfill
+                        \begin{minipage}{0.45\textwidth}
                             \centering
                             \includegraphics[width=\textwidth]{resources/image/ResidualPlot/SVM.png}
                             \caption{SVM 殘差圖}
                             \label{fig:residual_svm}
                         \end{minipage}
-                        \vspace{0.001\textwidth}
-                        \begin{minipage}[t]{0.4\textwidth}
+
+                        \vspace{0.5cm}
+
+                        \begin{minipage}{0.45\textwidth}
                             \centering
                             \includegraphics[width=\textwidth]{resources/image/ResidualPlot/MPR.png}
                             \caption{MPR 殘差圖}
                             \label{fig:residual_mpr}
-                        \end{minipage}
-                        \hspace{0.001\textwidth}
-                        \begin{minipage}[t]{0.4\textwidth}
+                        \end{minipage}%
+                        \hfill
+                        \begin{minipage}{0.45\textwidth}
                             \centering
                             \includegraphics[width=\textwidth]{resources/image/ResidualPlot/LR.png}
                             \caption{LR 殘差圖}
                             \label{fig:residual_lr}
                         \end{minipage}
                     \end{figure}
-            \item AI水質分析機器學習模型指標\\
+                \item AI水質分析機器學習模型指標\\
                 　　
             \end{enumerate}
         \item 智慧化水質分析與評估系統\\
@@ -394,7 +406,6 @@
 \bibitem{ref33} Sinha, P. (2013). Multivariate polynomial regression in data mining: methodology, problems and solutions. Int. J. Sci. Eng. Res, 4(12), 962-965.
 \bibitem{ref34} Berrar, D. (2019) Cross-Validation. In: Ranganathan, S., Gribskov, M., Nakai, K. and Christian Schönbach, C., Eds., Reference Module in Life Sciences Encyclopedia of Bioinformatics and Computational Biology, Vol. 1, Elsevier, Amsterdam, 542-545.
 \bibitem{ref35} Abdul Hameed M Jawad, A., Bahram K, M., \& Abass J, K. (2010). Evaluating raw and treated water quality of Tigris River within Baghdad by index analysis. journal of water resource and protection, 2010.
-
 \end{thebibliography}
 
 \end{enumerate}	
