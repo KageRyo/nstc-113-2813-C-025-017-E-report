@@ -449,16 +449,16 @@
                             \centering
                             \caption{大資料量（50000 筆樣本）下各模型的表現}
                             \label{table:large_data_50000}
-                            \begin{tabular}{|c|c|c|c|c|}
+                            \begin{tabular}{|c|c|c|c|c|c|c|}
                                 \hline
-                                模型 & 訓練集 \( R^2 \) & 測試集 \( R^2 \) & 測試集 MAE & 測試集 RMSE \\
+                                模型 & 訓練集 \( R^2 \) & 訓練集 MAE & 訓練集 RMSE & 測試集 \( R^2 \) & 測試集 MAE & 測試集 RMSE \\
                                 \hline
-                                XGBoost & 0.9994 & 0.9990 & 0.4173 & 0.6492 \\
-                                LightGBM & 0.9993 & 0.9991 & 0.4009 & 0.6174 \\
-                                RF & 0.9998 & 0.9987 & 0.4044 & 0.7367 \\
-                                SVM & 0.9671 & 0.9660 & 2.7122 & 3.7104 \\
-                                MPR & 0.7952 & 0.7943 & 7.3408 & 9.1307 \\
-                                LR & 0.7570 & 0.7519 & 7.8900 & 10.0296 \\
+                                XGBoost & 0.9994 & 0.3350 & 0.5044 & 0.9990 & 0.4173 & 0.6492 \\
+                                LightGBM & 0.9993 & 0.3630 & 0.5454 & 0.9991 & 0.4009 & 0.6174 \\
+                                RF & 0.9998 & 0.1504 & 0.2765 & 0.9987 & 0.4044 & 0.7367 \\
+                                SVM & 0.9671 & 2.6638 & 3.6555 & 0.9660 & 2.7122 & 3.7104 \\
+                                MPR & 0.7952 & 7.3185 & 9.1246 & 0.7943 & 7.3408 & 9.1307 \\
+                                LR & 0.7570 & 7.8368 & 9.9397 & 0.7519 & 7.8900 & 10.0296 \\
                                 \hline
                             \end{tabular}
                         \end{table}
@@ -502,14 +502,34 @@
                         　　值得注意的是，在提案與研究前期所使用的 MPR 模型表現不如文獻預期，顯示其適用性受限於資料特性。因此，對於水質資料分析，LightGBM 是最佳模型，XGBoost 為次佳選擇，兩者在準確性、穩定性和效率上均能滿足需求。
             \end{enumerate}
         \item 智慧化水質分析與評估系統\\
+        　　TODO
     \end{enumerate}
 \item 學術研究、國家發展及其他應用方面預期之貢獻\\
 　　本計畫旨在提供一個快速且準確，基於機器學習的智慧化水質評估方案，期望開發成果能成為解決水質問題的實用工具。本計畫在研究上需要結合跨領域的專業知識與技術，因此相關成果將在整理分析後進行論文發表，預計能對資訊工程、人工智慧、水資源管理和環境生態保育等領域產生有意義的價值與貢獻。
     \begin{enumerate}[label=3-3-\arabic*.]
-        \item 參加 PyCon Taiwan 2024 臺灣 Python 年會 Poster Session
-        \item 參加 2024 國際民生電子研討會並獲得論文佳作獎
-        \item 前期計畫相關研究成果發表期刊並接受
+        \item 參加 PyCon Taiwan 2024 臺灣 Python 年會 Poster Session\\
+            　　PyCon（Python 年會），是全球 Python 社群的年度盛會。最早在 2003 年成立於北美，目前世界各國都陸續舉辦了以 PyCon 精神為核心的會議。而在臺灣，PyCon Taiwan 是一年一度的活動，旨在討論和推廣 Python 程式語言。PyCon Taiwan 歡迎所有對 Python 感興趣的朋友參與，共同分享知識、交流想法，並結識更多志同道合的夥伴。
+        \item 參加 2024 民生國際電子研討會並獲得論文佳作獎\\
+            　　民生電子國際研討會由龍華科技大學主辦，會議討論主題包括智慧科技、半導體、車用電子、綠能電子、人工智慧與大數據、網際網路、科技教育及其他主題分類。
+        \item 前期計畫相關研究成果發表期刊並接受\\
+            　　本計畫建立於前期研究「運用智慧型綠能永續景觀噴泉促進環境保育效益之研究」（計畫編號：MOST 110-2410-H025-024）的堅實基礎之上，前期成果已發表於學術期刊《Using Intelligent Water Purification and Ecological Conservation System to Improve Environmental Conservation Benefits Evaluation》（刊載於 ScienceDirect，DOI: 10.1016/j.jece.2025.100032）。
     \end{enumerate}
+    \begin{figure}[H]
+        \centering
+        \begin{minipage}[t]{0.45\textwidth}
+            \centering
+                \includegraphics[height=5cm]{resources/image/pycon.jpg}
+                \caption{PyCon Taiwan 2024 Poster Session}
+                \label{fig:pycon}
+            \end{minipage}%
+            \hfill
+            \begin{minipage}[t]{0.45\textwidth}
+                \centering
+                \includegraphics[height=5cm]{resources/image/民生國際電子研討會.jpg}
+                \caption{2024 民生國際電子研討會}
+                \label{fig:iwce}
+            \end{minipage}
+        \end{figure}
 \end{enumerate}
 
 \begin{thebibliography}{99}
