@@ -502,7 +502,43 @@
                         　　值得注意的是，在提案與研究前期所使用的 MPR 模型表現不如文獻預期，顯示其適用性受限於資料特性。因此，對於水質資料分析，LightGBM 是最佳模型，XGBoost 為次佳選擇，兩者在準確性、穩定性和效率上均能滿足需求。
             \end{enumerate}
         \item 智慧化水質分析與評估系統\\
-        　　TODO
+        　　為能提供使用者水質評估的結果與問題改善之建議，本研究於前端使用者行動裝置應用程式開發成果如下所示。當使用者輸入水質資料後，系統會將輸入的資料傳送至部署於雲端伺服器上的機器學習模型進行運算分析，待分析完成後產生並回傳一個水質健康狀態的綜合評估分數，使用者亦可選擇進一步查看異常項目的水質資料與改善建議報表，以進一步了解水質狀態並能提早解決潛在的水質問題。
+            \begin{figure}[H]
+                \centering
+                % 第一行：兩張圖片
+                \begin{minipage}{0.35\textwidth}
+                    \centering
+                    \includegraphics[width=\textwidth]{resources/image/front-end/APP首頁.png}
+                    \caption{APP首頁}
+                \end{minipage}%
+                \hfill
+                \begin{minipage}{0.35\textwidth}
+                    \centering
+                    \includegraphics[width=\textwidth]{resources/image/front-end/APP輸入資料.png}
+                    \caption{APP輸入資料頁面}
+                \end{minipage}
+                
+                \vspace{1em} % 控制行間距，避免過大空白
+                
+                % 第二行：三張圖片
+                \begin{minipage}{0.3\textwidth}
+                    \centering
+                    \includegraphics[width=\textwidth]{resources/image/front-end/APP報表輸出.png}
+                    \caption{APP查閱報表功能}
+                \end{minipage}%
+                \hfill
+                \begin{minipage}{0.3\textwidth}
+                    \centering
+                    \includegraphics[width=\textwidth]{resources/image/front-end/APP報表詳細.png}
+                    \caption{APP各項水質狀況}
+                \end{minipage}%
+                \hfill
+                \begin{minipage}{0.3\textwidth}
+                    \centering
+                    \includegraphics[width=\textwidth]{resources/image/front-end/APP改善說明.png}
+                    \caption{APP改善建議}
+                \end{minipage}
+            \end{figure}
     \end{enumerate}
 \item 學術研究、國家發展及其他應用方面預期之貢獻\\
 　　本計畫旨在提供一個快速且準確，基於機器學習的智慧化水質評估方案，期望開發成果能成為解決水質問題的實用工具。本計畫在研究上需要結合跨領域的專業知識與技術，因此相關成果將在整理分析後進行論文發表，預計能對資訊工程、人工智慧、水資源管理和環境生態保育等領域產生有意義的價值與貢獻。
