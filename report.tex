@@ -29,6 +29,7 @@
 \usepackage{mathtools}
 \usepackage{microtype}
 \usepackage{enumitem}
+\usepackage{multirow}
 \usepackage{dirtytalk}
 \usepackage[figurename=圖]{caption}
 \usepackage{float}
@@ -253,8 +254,31 @@
     \end{figure}
 \item 執行進度\\
 　　本研究自 2024 年 7 月 1 日起開始執行，以甘特圖（Gantt Chart）進行嚴謹的規劃和執行，於 2025 年 2 月 28 日結案，共計執行約 8 個月。在 8 個月內完成了實作目標與相關內容，包括水質資料分析模型的比較、選擇與建構，以及智慧化水質分析與評估系統的開發與部署。研究主軸為找出最適合進行水質資料分析的模型並實際應用。各項步驟方向確認至最終完成如下表所示。
-\item 遭遇之困難與解決途徑\\
-　　[內容 TODO]
+    \begin{table}[H]
+        \centering
+        \caption{執行進度表}
+        \begin{tabular}{|c|c|c|c|c|c|c|c|c|}
+            \hline
+            \multirow{2}{*}{項目} & \multicolumn{8}{c|}{月份} \\
+            \cline{2-9}
+            & 7 月 & 8 月 & 9 月 & 10 月 & 11 月 & 12 月 & 1 月 & 2 月 \\
+            \hline
+            \multicolumn{1}{|c|}{\multirow{2}{*}{}} & \multicolumn{6}{c|}{2024} & \multicolumn{2}{c|}{2025} \\
+            \hline
+            文獻回顧與探討 & $\checkmark$ & $\checkmark$ & & & & & & \\
+            \hline
+            AI 水質分析機器學習模型的訓練 & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & & \\
+            \hline
+            進行實驗以比較不同機器學習模型 & & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \\
+            \hline
+            雲端伺服器架設與部署 & & & $\checkmark$ & $\checkmark$ & & & & \\
+            \hline
+            智慧化水質分析與評估系統 APP 開發 & & & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & & \\
+            \hline
+            結案報告撰寫 & & & & & & & $\checkmark$ & $\checkmark$ \\
+            \hline
+        \end{tabular}
+    \end{table}
 \end{enumerate}
 
 \item[(三)] 完成之工作項目及成果。
