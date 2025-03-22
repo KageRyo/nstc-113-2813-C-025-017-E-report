@@ -84,7 +84,7 @@
 \item 研究重要性\\
 　　在過去十年內，人工智慧的研究從長期被忽視的陰霾中走了出來，被人們看見了希望且掀起了新一波風潮 \cite{ref2}，而水資源管理與環境生態保育是全球關注的議題，而水質分析與評估是確保水資源安全的重要環節。本研究透過機器學習技術，克服傳統方法的效率瓶頸，降低對專業知識依賴，使水質資料分析變得更有效且易於操作，提升水質資料分析技術的普及性與可行性。\\
 　　本研究針對 XGBoost、LightGBM、支援向量機（SVM）、隨機森林（RF）、多元多項式迴歸（MPR）以及線性迴歸（LR）等機器學習模型進行獨立訓練，並透過決定係數（$R^2$）、均方根誤差（Root Mean Square Error, RMSE）、平均絕對誤差（Mean Absolute Error, MAE）以及殘差分析等指標評估各模型在水質資料分析上的準確性。\\
-　　透過實驗分析，我們發現［TODO］。這些結果有助於選擇最適合水質資料分析的機器學習模型，進一步提升水資源管理的準確度，為環境監測技術與未來相關研究的發展提供有效的參考依據。
+　　透過實驗分析，我們發現 LightGBM 在大資料量（50000 筆）下表現最佳，其測試集 \( R^2 \) 達到 0.9991，MAE 為 0.4009，RMSE 為 0.6174。相較之下，XGBoost 的 \( R^2 \) 為 0.9990，MAE 為 0.4173，RF 的 \( R^2 \) 為 0.9987，MAE 為 0.4044，顯示 LightGBM 在準確性和誤差控制上均略勝一籌。這些結果不僅驗證了 LightGBM 在處理大規模水質資料時的優異性能，也為未來在類似領域中選擇合適的機器學習模型提供了實證依據。透過本研究的實驗分析，能夠更準確地分析水質指標，從而提升水質分析與評估的效率和準確性。
 \item 預期影響性\\
 　　本研究的智慧化水質分析與評估系統結合了模型比較實驗與系統開發，有望在以下方面產生影響：
     \begin{enumerate}[label=1-5-\arabic*.]
@@ -95,7 +95,7 @@
 \item 國內外研究情況\\
 　　本研究作者先前參與的計畫已經使用物聯網技術進行水質資料的採集，這種方法在環境監測中已經相當普遍。然而，目前國內外針對水質資料分析的智慧化系統，特別是結合機器學習技術的水質分析系統相對較少。機器學習技術在水質評估中的應用已被證明是有效的，並逐漸成為水資源管理的重要分析工具 \cite{ref4}，應用各種技術構建學習模型，能夠達成提供即時準確水質資訊的目的，期望得以透過早期診斷水質異常以改善公共健康 \cite{ref5}。因此，本研究具有創新性和獨特性，有助於填補水質資料分析中高效方法的空白。
 \item 重要參考文獻\\
-　　隨著人工智慧發展，各種機器學習模型也如雨後春筍般出現。模型實作上如開發一種基於多元多項式迴歸（MPR）的機器學習模型，在該研究中以模型與線性迴歸及支援向量機模型進行比較，發現 MPR 在性能評估指標包含 R²（R-squared）和 RMSE（Root-Mean-Square Error）上皆優於另外兩個模型 \cite{ref6}，其提出的 MPR 公式如(1)所示，其中 $\hat{y}$ 是輸出變數，$w_0$ 是截距，$w_1, w_2, \ldots, w_s$ 為多項式迴歸係數，$x$ 為輸入變數，表示具有 $n$ 個輸入變數和階數（$s > 1$）的 MPR 系統。加上其他研究成果使用 MPR 模型驗證其預測結果 \cite{ref7}，如圖 2 所示，MPR 建立了一個六元多項式迴歸模型，結果顯示其訓練集的 MAPE（Mean Absolute Percentage Error）為 1.873\%，MAE（Mean Absolute Error）為（TODO 待確認），證明了 MPR 模型在水質資料分析上的優越性 \cite{ref8}。這些研究成果將有助於本研究的模型選擇與效能評估，也因此本研究前期採用 MPR 模型作為基準模型進行比較。\\
+　　隨著人工智慧發展，各種機器學習模型也如雨後春筍般出現。模型實作上如開發一種基於多元多項式迴歸（MPR）的機器學習模型，在該研究中以模型與線性迴歸及支援向量機模型進行比較，發現 MPR 在性能評估指標包含 R²（R-squared）和 RMSE（Root-Mean-Square Error）上皆優於另外兩個模型 \cite{ref6}，其提出的 MPR 公式如(1)所示，其中 $\hat{y}$ 是輸出變數，$w_0$ 是截距，$w_1, w_2, \ldots, w_s$ 為多項式迴歸係數，$x$ 為輸入變數，表示具有 $n$ 個輸入變數和階數（$s > 1$）的 MPR 系統。加上其他研究成果使用 MPR 模型驗證其預測結果 \cite{ref7}，如圖 2 所示，顯示了前三個模型的殘差和高斯函數，它們都具有正態分佈模式，與 RF 和 LR 演算法相比，MPR 模型似乎具有更高水準的預測準確性，因為 MPR 的 80\% 殘差在 [−17.267， 17.267] 範圍內。此外，MPR 模型的殘差擬合正態分佈的平均值為 0.703，更為接近 0;也就是說，MPR 模型具有更好的誤差隨機性。\cite{ref8}。這些研究成果將有助於本研究的模型選擇與效能評估，也因此本研究前期採用 MPR 模型作為基準模型進行比較。\\
     \begin{equation}
         \hat{y} = w_0 + \sum_{i_1=1}^{n} w_{i_1} x_{i_1} + \sum_{i_1=1}^{n} \sum_{i_2=i_1}^{n} w_{i_1 i_2} x_{i_1} x_{i_2} + \cdots + \sum_{i_1=1}^{n} \sum_{i_2=i_1}^{n} \cdots \sum_{i_k=i_{k-1}}^{n} w_{i_1 i_2 \cdots i_k} x_{i_1} x_{i_2} \cdots x_{i_k}
     \end{equation}
@@ -104,8 +104,8 @@
     % 圖 2
     \begin{figure}[H]
         \centering
-        \includegraphics[width=0.5\textwidth]{resources/image/Canamero et al.(2023).png}
-        \caption{Canamero 等人提出的六元 MPR 模型}
+        \includegraphics[width=0.7\textwidth]{resources/image/applsci-13-05131-g004-550.jpg}
+        \caption{Zeini 等人的 5 倍交叉驗證訓練數據集殘差的正態分佈}
         \label{fig:MPR_validation}
     \end{figure}
 \end{enumerate}
@@ -161,7 +161,7 @@
 　　本研究所設計之多元多項式迴歸模型開發與實驗步驟流程如圖所示，可分為 (2-2-1) 資料取得、(2-2-2) 資料前處理、(2-2-3) 模型選擇與比較、(2-2-4) 超參數調整、(2-2-5) 改良與測試及 (2-2-6) 實現系統化，整體系統化作業流程包含起始於資料取得、模型完成與最終實際應用於水質分析，以實現「基於機器學習實現智慧化水質分析與評估系統」為目標。
     \begin{figure}[H]
         \centering
-        \includegraphics[width=0.8\textwidth]{resources/image/模型建構流程圖.png}
+        \includegraphics[width=0.6\textwidth]{resources/image/模型建構流程圖.png}
         \caption{模型建構流程圖}
         \label{fig:research_steps}
     \end{figure}
@@ -170,7 +170,7 @@
         　　本研究將參考「運用智慧型綠能永續景觀噴泉促進環境保育效益之研究」計畫（編號：MOST110-2410-H025-024）所蒐集的水質資料，並結合中華民國環境部全國環境水質監測資訊網的公開資料，共計蒐集了 87,005 筆水質資料。本研究所採用的水質參數包括溶氧量（DO）、生物需氧量（BOD）、懸浮固體（SS）、氨氮（NH3-N）及導電度（EC）。研究中將使用多元多項式迴歸（MPR）模型對各項水質資料進行機器學習分析。如圖所示，不同資料之間存在交互影響水質健康的關係，例如：DO 濃度越高，NH3-N 及 EC 濃度越低；NH3-N 濃度越高，EC 越高。此外，DO 與水質綜合評分之關係顯示其為重要指標之一，而 BOD、NH3-N、EC 及 SS 與水質綜合評分之關係則顯示其為水質污染的指標。
             \begin{figure}[H]
                 \centering
-                \includegraphics[width=0.5\textwidth]{resources/image/heatmap.png}
+                \includegraphics[width=0.35\textwidth]{resources/image/heatmap.png}
                 \caption{相關性分析矩陣}
                 \label{fig:correlation_matrix}
             \end{figure}
@@ -195,6 +195,7 @@
                 　　線性迴歸（LR）是一種簡單但基本的監督式學習模型，透過線性方程式來預測目標變數的值，雖然 LR 與現代統計與機器學習技術方法相比顯得簡單，但仍具價值且為現代模型提供了基礎 \cite{ref29}。
                 \item 支援向量機（Support Vector Machine, SVM）\\
                 　　支援向量機（SVM）主要描述支援向量方法的分類 \cite{ref30}。SVM 模型的目標是找到一個最佳的超平面，使得資料點與超平面之間的邊界最大化，進而達到最佳分類效果 \cite{ref31}。
+                \\
                 \item 隨機森林樹（Random Forest, RF）\\
                 　　隨機森林是一種結合多個樹狀預測器的機器學習模型，每個樹基於獨立抽樣的隨機向量生成，且森林中所有樹的隨機向量具有相同的分佈特性。隨著森林中樹的數量增加，其泛化誤差幾乎確定會收斂至一個有限值，這反映了隨機森林在統計上的穩定性 \cite{ref32}。
                 \item 多元多項式迴歸（Multiple Polynomial Regression, MPR）\\
@@ -222,6 +223,8 @@
                     \begin{equation}
                     RMSE = \sqrt{\frac{1}{n} \sum_{i=1}^n (X_i - Y_i)^2}
                     \end{equation}
+                \\
+                \\
                 \item 平均絕對誤差（Mean Absolute Error, MAE）\\
                 　　MAE 的計算為目標值與測量值之差的絕對值之和再取平均值，用於判斷 MPR 水質分析模型的準確性，MAE 的數值越低模型所測量出的誤差越小，反之 MAE 的數值越高測量出的誤差越大，MAE 公式如下所示。
                     \begin{equation}
@@ -244,7 +247,7 @@
     \end{enumerate}
     \begin{figure}[H]
         \centering
-        \includegraphics[width=0.6\textwidth]{resources/image/使用者流程圖.png}
+        \includegraphics[width=0.7\textwidth]{resources/image/使用者流程圖.png}
         \caption{使用者流程圖}
         \label{fig:user_flow}
     \end{figure}
