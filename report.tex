@@ -75,7 +75,6 @@
 　　近十年來，人工智慧（Artificial Intelligence, AI）從理論發展到實際應用，各種 AI 等工具也被廣泛運用於日常問題成為解決方案 \cite{ref1}。本研究運用人工智慧中的機器學習技術，開發一套智慧化水質分析與評估系統，實現更高效且易於操作的創新水質分析方法。不同於傳統統計軟體需要人工輸入與分析，本系統結合自動化資料處理與機器學習演算法，以提升水質分析的準確性與效率。此外，本研究將探索 AI 在水資源管理與環境保育領域的創新應用，提供創新的智慧化水質資料分析方案。\\
 　　為了找出最適合水質分析的機器學習模型，本研究針對 XGBoost、LightGBM、支援向量機（Support Vector Machine, SVM）、隨機森林（Random Forest, RF）、多元多項式迴歸（Multiple Polynomial Regression, MPR）以及線性迴歸（Linear Regression, LR）等多種模型進行比較與評估。透過實驗分析與比較不同模型在水質資料分析準確度、計算效能與資料適應性的表現，進一步應用於改良水質分析，使系統能夠有效應對水體環境的分析與評估需求。\\
 　　實驗設計包括使用先前於「運用智慧型綠能永續景觀噴泉促進環境保育效益之研究」計畫中，使用物聯網設備實際蒐集的水質資料，加上環境部環境資料開放平臺公開資料使用，特徵選擇包括溶解氧（DO）、生化需氧量（BOD）、氨氮（NH3-N）、電導度（EC）和懸浮固體（SS）等關鍵指標。在訓練過程中，使用水體品質指標（Water Quality Index, WQI$_5$）作為標記資料進行監督式學習。
-    % 圖 1
     \begin{figure}[H]
         \centering
         \includegraphics[width=0.75\textwidth]{resources/image/使用情境圖.png}
@@ -102,10 +101,9 @@
     \end{equation}
 　　另外，隨著近年來 XGBoost 與 LightGBM 等新興模型在機器學習領域中的崛起，本研究在中後期將其納入比較範疇，XGBoost 在資料科學領域中被廣泛使用，也在 Kaggle 許多機器學習及競賽中取得最佳結果，其特點為有非常強的擴展性（Scalibility）與性能，可以使用相對其他模型更少的系統資源，擴充數十億級別的資料 \cite{ref9}。而 LightGBM 是一種高效能的梯度提升決策樹，在傳統 Gradient Boosting Decision Tree（GBDT）演算法上加入使用 Gradient-based One-Side Sampling（GOSS）和 Exclusive Feature Bunding（EFB），並顯示出 LightGBM 相較傳統的 GBDT 加快了 20 倍以上的速度，同時也並未降低準確性 \cite{ref10}。\\
 　　綜合以上重要參考文獻，本研究對 XGBoost、LightGBM、支援向量機（Support Vector Machine, SVM）、隨機森林（Random Forest, RF）、多元多項式迴歸（Multiple Polynomial Regression, MPR）以及線性迴歸（Linear Regression, LR）等多種模型進行比較與評估，期望找出最適合水質分析的機器學習模型，並提升水質分析的準確性與效率。
-    % 圖 2
     \begin{figure}[H]
         \centering
-        \includegraphics[width=0.7\textwidth]{resources/image/applsci-13-05131-g004-550.jpg}
+        \includegraphics[width=0.6\textwidth]{resources/image/applsci-13-05131-g004-550.jpg}
         \caption{Zeini 等人的 5 倍交叉驗證訓練數據集殘差的正態分佈}
         \label{fig:MPR_validation}
     \end{figure}
@@ -119,14 +117,14 @@
         \centering
         \begin{minipage}{0.45\textwidth}
             \centering
-            \includegraphics[width=\textwidth]{resources/image/開發架構圖.png}
+            \includegraphics[width=0.9\textwidth]{resources/image/開發架構圖.png}
             \caption{系統程式開發架構圖}
             \label{fig:development_architecture}
         \end{minipage}%
         \hfill
         \begin{minipage}{0.45\textwidth}
             \centering
-            \includegraphics[width=\textwidth]{resources/image/部署圖.jpg}
+            \includegraphics[width=0.9\textwidth]{resources/image/部署圖.jpg}
             \caption{系統部署圖}
             \label{fig:deployment_diagram}
         \end{minipage}
@@ -169,12 +167,12 @@
     \begin{enumerate}[label=2-2-\arabic*.]
         \item 資料取得\\
         　　本研究將參考「運用智慧型綠能永續景觀噴泉促進環境保育效益之研究」計畫（編號：MOST110-2410-H025-024）所蒐集的水質資料，並結合中華民國環境部全國環境水質監測資訊網的公開資料，共計蒐集了 87,005 筆水質資料。本研究所採用的水質參數包括溶氧量（DO）、生物需氧量（BOD）、懸浮固體（SS）、氨氮（NH3-N）及導電度（EC）。研究中將使用多元多項式迴歸（MPR）模型對各項水質資料進行機器學習分析。如圖所示，不同資料之間存在交互影響水質健康的關係，例如：DO 濃度越高，NH3-N 及 EC 濃度越低；NH3-N 濃度越高，EC 越高。此外，DO 與水質綜合評分之關係顯示其為重要指標之一，而 BOD、NH3-N、EC 及 SS 與水質綜合評分之關係則顯示其為水質污染的指標。
-            \begin{figure}[H]
-                \centering
-                \includegraphics[width=0.35\textwidth]{resources/image/heatmap.png}
-                \caption{相關性分析矩陣}
-                \label{fig:correlation_matrix}
-            \end{figure}
+        \begin{figure}[H]
+            \centering
+            \includegraphics[width=0.45\textwidth]{resources/image/heatmap.png}
+            \caption{相關性分析矩陣}
+            \label{fig:correlation_matrix}
+        \end{figure}
         \item 資料前處理\\
         　　在進行機器學習模型訓練前，需對蒐集的原始資料進行前處理，以減少母體資料中的不確定性。此過程可以透過 Pandas 來完成，主要步驟包括：(A) 遺失值處理、(B) 異常值處理、(C) 標準化、(D) 資料拆分及 (E) 特徵工程等。各項操作重點說明如下：
             \begin{enumerate}[label=\Alph*.]
@@ -247,7 +245,7 @@
     \end{enumerate}
     \begin{figure}[H]
         \centering
-        \includegraphics[width=0.7\textwidth]{resources/image/使用者流程圖.png}
+        \includegraphics[width=0.75\textwidth]{resources/image/使用者流程圖.png}
         \caption{使用者流程圖}
         \label{fig:user_flow}
     \end{figure}
@@ -335,45 +333,54 @@
                 \item AI 水質分析機器學習模型殘差\\
                 　　從各模型殘差分布中，可以明顯看出 XGBoost 模型在擬合度上的優勢。如圖所示，XGBoost 模型的殘差分布相對均勻，峰值皆在 0 附近。曲線斜率平緩，說明 XGBoost 模型的預測值與實際值之間的差異相對較小，具有較好的擬合度。相比之下，LightGBM 模型的殘差分布雖也接近 0，但曲線略微陡峭，顯示其在某些情況下預測誤差稍大。RF 模型的殘差分布峰值同樣在 0 附近，但曲線較為分散，顯示其預測穩定性略遜於 XGBoost。SVM 模型的殘差分布則呈現較大的波動，峰值偏離 0 較遠，顯示其擬合能力相對較差。MPR 和 LR 模型的殘差分布更為分散，曲線斜率陡峭，顯示其預測誤差較大，擬合度不佳。\\
                 　　綜合以上，XGBoost 模型的擬合度更佳於其他模型，能更好地捕捉水質資料中的非線性關係，從而進行更準確的分析。在本研究開發的智慧化水質分析與評估系統的實際應用中，XGBoost 模型具有捕捉水質資料中非線性關係、擬合度較好以及準確性高的優點，因此在解決非線性迴歸問題、分析具有非線性關係的資料及建立更複雜的模型以進行描述方面，具有更廣泛的應用。由此可見就殘差分布而言，選擇 XGBoost 模型在應對具有非線性關係的資料時，相較於其餘模型而言，是更為理想的選擇。
-                    \begin{figure}[H]
+                \begin{figure}[H]
+                    \centering
+                    \begin{minipage}{0.45\textwidth}
                         \centering
-                        \begin{minipage}{0.45\textwidth}
-                            \centering
-                            \includegraphics[width=\textwidth]{resources/image/ResidualPlot/XGBoost.png}
-                            \caption{XGBoost 殘差圖}
-                            \label{fig:residual_xgboost}
-                        \end{minipage}
-                        \begin{minipage}{0.45\textwidth}
-                            \centering
-                            \includegraphics[width=\textwidth]{resources/image/ResidualPlot/LightGBM.png}
-                            \caption{LightGBM 殘差圖}
-                            \label{fig:residual_lightgbm}
-                        \end{minipage}
-                        \begin{minipage}{0.45\textwidth}
-                            \centering
-                            \includegraphics[width=\textwidth]{resources/image/ResidualPlot/RF.png}
-                            \caption{RF 殘差圖}
-                            \label{fig:residual_rf}
-                        \end{minipage}
-                        \begin{minipage}{0.45\textwidth}
-                            \centering
-                            \includegraphics[width=\textwidth]{resources/image/ResidualPlot/SVM.png}
-                            \caption{SVM 殘差圖}
-                            \label{fig:residual_svm}
-                        \end{minipage}
-                        \begin{minipage}{0.45\textwidth}
-                            \centering
-                            \includegraphics[width=\textwidth]{resources/image/ResidualPlot/MPR.png}
-                            \caption{MPR 殘差圖}
-                            \label{fig:residual_mpr}
-                        \end{minipage}
-                        \begin{minipage}{0.45\textwidth}
-                            \centering
-                            \includegraphics[width=\textwidth]{resources/image/ResidualPlot/LR.png}
-                            \caption{LR 殘差圖}
-                            \label{fig:residual_lr}
-                        \end{minipage}
-                    \end{figure}
+                        \includegraphics[width=0.9\textwidth]{resources/image/ResidualPlot/XGBoost.png}
+                        \caption{XGBoost 殘差圖}
+                        \label{fig:residual_xgboost}
+                    \end{minipage}%
+                    \hfill
+                    \begin{minipage}{0.45\textwidth}
+                        \centering
+                        \includegraphics[width=0.9\textwidth]{resources/image/ResidualPlot/LightGBM.png}
+                        \caption{LightGBM 殘差圖}
+                        \label{fig:residual_lightgbm}
+                    \end{minipage}
+                    
+                    \vspace{1em}
+                    
+                    \begin{minipage}{0.45\textwidth}
+                        \centering
+                        \includegraphics[width=0.9\textwidth]{resources/image/ResidualPlot/RF.png}
+                        \caption{RF 殘差圖}
+                        \label{fig:residual_rf}
+                    \end{minipage}%
+                    \hfill
+                    \begin{minipage}{0.45\textwidth}
+                        \centering
+                        \includegraphics[width=0.9\textwidth]{resources/image/ResidualPlot/SVM.png}
+                        \caption{SVM 殘差圖}
+                        \label{fig:residual_svm}
+                    \end{minipage}
+                    
+                    \vspace{1em}
+                    
+                    \begin{minipage}{0.45\textwidth}
+                        \centering
+                        \includegraphics[width=0.9\textwidth]{resources/image/ResidualPlot/MPR.png}
+                        \caption{MPR 殘差圖}
+                        \label{fig:residual_mpr}
+                    \end{minipage}%
+                    \hfill
+                    \begin{minipage}{0.45\textwidth}
+                        \centering
+                        \includegraphics[width=0.9\textwidth]{resources/image/ResidualPlot/LR.png}
+                        \caption{LR 殘差圖}
+                        \label{fig:residual_lr}
+                    \end{minipage}
+                \end{figure}
                 \item AI 水質分析機器學習模型指標\\
                 　　在本研究中，我們對多種機器學習模型進行了訓練與評估，包括 XGBoost、LightGBM、隨機森林（RF）、支持向量機（SVM）、多元多項式迴歸（MPR）及線性迴歸（LR），以探討其在水質分析中的表現。為全面評估各模型在不同資料量下的相對優劣，我們使用了多種訓練集大小進行實驗：100 筆、1000 筆、5000 筆、10000 筆、20000 筆及 50000 筆資料，並最終在剩餘的 10714 筆資料上進行測試。評估指標包括決定係數（\( R^2 \)）、均方根誤差（RMSE）及平均絕對誤差（MAE），並對訓練集與測試集的結果進行了分析。以下將分段呈現各模型在不同資料量下的表現，並在最後總結出相對而言最適合水質資料分析的模型。\\
                 　　在小資料量（100 筆樣本）下，各模型的表現如表 \ref{table:small_data} 所示。相較之下，樹模型（XGBoost、LightGBM、RF）的表現顯著優於其他模型，其中隨機森林（RF）在測試集上的 \( R^2 \) 達到 0.9377，MAE 為 3.0579，RMSE 為 4.2815，顯示出最佳的預測能力。XGBoost 和 LightGBM 的測試集 \( R^2 \) 分別為 0.9328 和 0.9223，誤差指標略高於 RF，但仍明顯優於非樹模型。相比之下，支持向量機（SVM）、多元多項式迴歸（MPR）和線性迴歸（LR）的表現較差，尤其是 MPR 的測試集 \( R^2 \) 為 -164.1864，MAE 為 8.6939，RMSE 為 19.0324，顯示其完全不適合小規模水質資料分析。LR 的測試集 \( R^2 \) 為 0.6704，雖優於 MPR 和 SVM，但與樹模型相比仍有較大差距。\\
