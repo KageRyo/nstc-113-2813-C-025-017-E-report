@@ -533,42 +533,45 @@
             \end{enumerate}
         \item 智慧化水質分析與評估系統\\
         　　為能提供使用者水質評估的結果與問題改善之建議，本研究於前端使用者行動裝置應用程式開發成果如下所示。當使用者輸入水質資料後，系統會將輸入的資料傳送至部署於雲端伺服器上的機器學習模型進行運算分析，待分析完成後產生並回傳一個水質健康狀態的綜合評估分數，使用者亦可選擇進一步查看異常項目的水質資料與改善建議報表，以進一步了解水質狀態並能提早解決潛在的水質問題。
-            \begin{figure}[H]
+        \begin{figure}[H]
+            \centering
+            \begin{minipage}{0.45\textwidth}
                 \centering
-                % 第一行：兩張圖片
-                \begin{minipage}{0.35\textwidth}
-                    \centering
-                    \includegraphics[width=\textwidth]{resources/image/front-end/APP首頁.png}
-                    \caption{APP首頁}
-                \end{minipage}%
-                \hfill
-                \begin{minipage}{0.35\textwidth}
-                    \centering
-                    \includegraphics[width=\textwidth]{resources/image/front-end/APP輸入資料.png}
-                    \caption{APP輸入資料頁面}
-                \end{minipage}
-                
-                \vspace{1em} % 控制行間距，避免過大空白
-                
-                % 第二行：三張圖片
-                \begin{minipage}{0.3\textwidth}
-                    \centering
-                    \includegraphics[width=\textwidth]{resources/image/front-end/APP報表輸出.png}
-                    \caption{APP查閱報表功能}
-                \end{minipage}%
-                \hfill
-                \begin{minipage}{0.3\textwidth}
-                    \centering
-                    \includegraphics[width=\textwidth]{resources/image/front-end/APP報表詳細.png}
-                    \caption{APP各項水質狀況}
-                \end{minipage}%
-                \hfill
-                \begin{minipage}{0.3\textwidth}
-                    \centering
-                    \includegraphics[width=\textwidth]{resources/image/front-end/APP改善說明.png}
-                    \caption{APP改善建議}
-                \end{minipage}
-            \end{figure}
+                \includegraphics[width=0.9\textwidth]{resources/image/front-end/APP首頁.png}
+                \caption{APP首頁}
+                \label{fig:app_home}
+            \end{minipage}%
+            \hfill
+            \begin{minipage}{0.45\textwidth}
+                \centering
+                \includegraphics[width=0.9\textwidth]{resources/image/front-end/APP輸入資料.png}
+                \caption{APP輸入資料頁面}
+                \label{fig:app_input}
+            \end{minipage}
+            
+            \vspace{1em}
+            
+            \begin{minipage}{0.3\textwidth}
+                \centering
+                \includegraphics[width=0.9\textwidth]{resources/image/front-end/APP報表輸出.png}
+                \caption{APP查閱報表功能}
+                \label{fig:app_report}
+            \end{minipage}%
+            \hfill
+            \begin{minipage}{0.3\textwidth}
+                \centering
+                \includegraphics[width=0.9\textwidth]{resources/image/front-end/APP報表詳細.png}
+                \caption{APP各項水質狀況}
+                \label{fig:app_details}
+            \end{minipage}%
+            \hfill
+            \begin{minipage}{0.3\textwidth}
+                \centering
+                \includegraphics[width=0.9\textwidth]{resources/image/front-end/APP改善說明.png}
+                \caption{APP改善建議}
+                \label{fig:app_suggestions}
+            \end{minipage}
+        \end{figure}
     \end{enumerate}
 
 \item 學術研究、國家發展及其他應用方面預期之貢獻\\
@@ -582,22 +585,22 @@
             　　參加國立臺中科技大學智慧生產工程系舉辦的專題競賽，榮獲專題實務組第一名。競賽目的旨在鼓勵學生在專題研究擁有跨領域學習與合作的機會，培養其專長與技術能力，並推動智慧科技在未來社會的創新應用。
         \item 前期計畫相關研究成果發表期刊並接受\\
             　　本計畫建立於前期研究「運用智慧型綠能永續景觀噴泉促進環境保育效益之研究」（計畫編號：MOST 110-2410-H025-024）的堅實基礎之上，前期成果已發表於學術期刊《Using Intelligent Water Purification and Ecological Conservation System to Improve Environmental Conservation Benefits Evaluation》（刊載於 ScienceDirect，DOI: 10.1016/j.jece.2025.100032）。
-    \end{enumerate}
-    \begin{figure}[H]
+        \end{enumerate}
+        \begin{figure}[H]
         \centering
-        \begin{minipage}[t]{0.45\textwidth}
+        \begin{minipage}[t][0.3\textheight][c]{0.45\textwidth}
             \centering
-                \includegraphics[height=5cm]{resources/image/pycon.jpg}
-                \caption{PyCon Taiwan 2024 Poster Session}
-                \label{fig:pycon}
-            \end{minipage}%
-            \hfill
-            \begin{minipage}[t]{0.45\textwidth}
-                \centering
-                \includegraphics[height=5cm]{resources/image/民生國際電子研討會.jpg}
-                \caption{2024 民生國際電子研討會}
-                \label{fig:iwce}
-            \end{minipage}
+            \includegraphics[width=\textwidth,height=0.3\textheight,keepaspectratio]{resources/image/pycon.jpg}
+            \caption{PyCon Taiwan 2024 Poster Session}
+            \label{fig:pycon}
+        \end{minipage}%
+        \hfill
+        \begin{minipage}[t][0.3\textheight][c]{0.45\textwidth}
+            \centering
+            \includegraphics[width=\textwidth,height=0.3\textheight,keepaspectratio]{resources/image/民生國際電子研討會.jpg}
+            \caption{2024 民生國際電子研討會}
+            \label{fig:iwce}
+        \end{minipage}
         \end{figure}
 \end{enumerate}
 
